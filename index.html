@@ -80,9 +80,29 @@
   </section>
 
   <footer class="app-footer">
-    <p>A non-commercial fan tribute. "Listen" opens a YouTube search — no audio is hosted here.</p>
+    <p>A non-commercial fan tribute. Songs play through the official YouTube embed player — no audio is hosted here.</p>
     <p id="netStatus" class="net-status"></p>
   </footer>
+
+  <!-- ============ NOW PLAYING (YouTube embed player) ============ -->
+  <section id="player" class="player" hidden aria-label="Now playing">
+    <div class="player-video" id="playerVideo">
+      <div id="ytFrame"></div>
+    </div>
+    <div class="player-bar">
+      <div class="player-info">
+        <p id="npTitle" class="np-title">—</p>
+        <p id="npSub" class="np-sub" lang="hi">—</p>
+      </div>
+      <div class="player-ctrls">
+        <button id="npPrev" class="pc-btn" aria-label="Previous song">⏮</button>
+        <button id="npToggle" class="pc-btn pc-main" aria-label="Pause">⏸</button>
+        <button id="npNext" class="pc-btn" aria-label="Next song">⏭</button>
+        <button id="npClose" class="pc-btn" aria-label="Close player">✕</button>
+      </div>
+    </div>
+    <p id="npError" class="np-error" hidden></p>
+  </section>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 

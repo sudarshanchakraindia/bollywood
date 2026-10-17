@@ -233,7 +233,7 @@
     const fav = state.favs.has(s.id);
     const q = state.query;
     return `
-      <li class="song" id="song-${esc(s.id)}">
+      <li class="song${Player.isCurrent(s.id) ? ' playing' : ''}" id="song-${esc(s.id)}">
         <p class="song-title">${highlight(s.title, q)}</p>
         <p class="song-hi" lang="hi">${highlight(s.hi, q)}</p>
         <p class="song-meta">🎬 ${esc(s.film)} (${esc(s.year)}) · 🎼 ${esc(s.composer)}</p>
@@ -248,7 +248,9 @@
             <span>${s.pop}</span>
           </div>` : ''}
         <div class="song-actions">
-          <a class="play-btn" href="${ytLink(s)}" target="_blank" rel="noopener">▶ Listen</a>
+          ${s.yt
+            ? `<button class="play-btn" data-play="${esc(s.id)}" aria-label="Play ${esc(s.title)}">${Player.isCurrent(s.id) ? '🔊 Playing' : '▶ Play'}</button>`
+            : `<a class="play-btn" href="${ytLink(s)}" target="_blank" rel="noopener">▶ Listen</a>`}
           <button class="fav-btn" data-fav="${esc(s.id)}" aria-pressed="${fav}" aria-label="${fav ? 'Remove from' : 'Add to'} favourites">${fav ? '♥' : '♡'}</button>
         </div>
       </li>`;
@@ -416,7 +418,7 @@
               setQuery(text);
               const top = search(text)[0];
               if (top) {
-                toast(`🎵 ${top.s.title} — tap ▶ Listen`);
+                toast(`🎵 ${top.s.title} — tap ▶ Play`);
                 setTimeout(() => {
                   const card = document.getElementById('song-' + top.s.id);
                   if (card) { card.scrollIntoView({ behavior: 'smooth', block: 'center' }); card.querySelector('.play-btn')?.focus({ preventScroll: true }); }
@@ -469,6 +471,129 @@
   })();
 
   // =========================================================
+  //  NOW PLAYING — in-app YouTube player (official IFrame API)
+  //  Plays the exact video stored in songs.json ("yt" field).
+  //  Free embed: no login, licence or subscription needed.
+  // =========================================================
+  const Player = (() => {
+    const p = {
+      box: $('player'), title: $('npTitle'), sub: $('npSub'), err: $('npError'),
+      prev: $('npPrev'), next: $('npNext'), toggle: $('npToggle'), close: $('npClose')
+    };
+    let yt = null, ready = false, apiLoading = null;
+    let current = null, queue = [], pendingId = null;
+
+    function loadApi() {
+      if (window.YT && window.YT.Player) return Promise.resolve();
+      if (apiLoading) return apiLoading;
+      apiLoading = new Promise((resolve, reject) => {
+        window.onYouTubeIframeAPIReady = resolve;
+        const s = document.createElement('script');
+        s.src = 'https://www.youtube.com/iframe_api';
+        s.onerror = () => { apiLoading = null; reject(new Error('YouTube API failed')); };
+        document.head.appendChild(s);
+      });
+      return apiLoading;
+    }
+
+    const songById = (id) => state.songs.find((s) => s.id === id);
+
+    function showInfo(song) {
+      p.title.textContent = song.title;
+      p.sub.textContent = `${song.hi} · ${song.film} (${song.year})`;
+      p.err.hidden = true;
+      document.title = `▶ ${song.title} — Kishore Jukebox`;
+      if ('mediaSession' in navigator) {
+        try {
+          navigator.mediaSession.metadata = new MediaMetadata({
+            title: song.title, artist: song.singers, album: song.film,
+            artwork: [{ src: `https://i.ytimg.com/vi/${song.yt}/hqdefault.jpg`, sizes: '480x360', type: 'image/jpeg' }]
+          });
+          navigator.mediaSession.setActionHandler('nexttrack', () => step(1));
+          navigator.mediaSession.setActionHandler('previoustrack', () => step(-1));
+        } catch { /* optional */ }
+      }
+    }
+
+    function onError(e) {
+      // 101/150 = owner disabled embedding, 100 = removed, 2/5 = bad request/HTML5 error
+      const song = songById(current);
+      p.err.hidden = false;
+      p.err.innerHTML = `⚠ This video can't play here. <a href="https://www.youtube.com/watch?v=${esc(song?.yt)}" target="_blank" rel="noopener">Open on YouTube ↗</a> · skipping in 4s…`;
+      setTimeout(() => { if (current === song?.id) step(1); }, 4000);
+    }
+
+    function onState(e) {
+      const S = window.YT.PlayerState;
+      if (e.data === S.PLAYING) { p.toggle.textContent = '⏸'; p.toggle.setAttribute('aria-label', 'Pause'); }
+      if (e.data === S.PAUSED) { p.toggle.textContent = '▶'; p.toggle.setAttribute('aria-label', 'Play'); }
+      if (e.data === S.ENDED) step(1); // auto-play next song in the list
+    }
+
+    async function play(id, newQueue) {
+      const song = songById(id);
+      if (!song || !song.yt) return;
+      if (!navigator.onLine) { toast('Songs need internet. गाना सुनने के लिए इंटरनेट चाहिए।'); return; }
+      if (newQueue && newQueue.length) queue = newQueue;
+      current = id;
+      p.box.hidden = false;
+      document.body.classList.add('has-player');
+      showInfo(song);
+      render(); // highlight the playing card
+
+      try { await loadApi(); } catch {
+        p.err.hidden = false;
+        p.err.innerHTML = `⚠ Player could not load. <a href="https://www.youtube.com/watch?v=${esc(song.yt)}" target="_blank" rel="noopener">Open on YouTube ↗</a>`;
+        return;
+      }
+      if (!yt) {
+        pendingId = song.yt;
+        yt = new window.YT.Player('ytFrame', {
+          host: 'https://www.youtube-nocookie.com',
+          videoId: song.yt,
+          playerVars: { autoplay: 1, playsinline: 1, rel: 0, modestbranding: 1 },
+          events: {
+            onReady: (e) => { ready = true; e.target.playVideo(); if (pendingId !== song.yt) e.target.loadVideoById(pendingId); },
+            onStateChange: onState,
+            onError
+          }
+        });
+      } else if (ready) {
+        yt.loadVideoById(song.yt);
+      } else {
+        pendingId = song.yt;
+      }
+    }
+
+    function step(dir) {
+      if (!queue.length) return;
+      const i = queue.indexOf(current);
+      const nextId = queue[(i + dir + queue.length) % queue.length];
+      play(nextId);
+    }
+
+    function closePlayer() {
+      if (yt && ready) yt.stopVideo();
+      current = null;
+      p.box.hidden = true;
+      document.body.classList.remove('has-player');
+      document.title = 'Kishore Kumar Ultimate Fan Jukebox';
+      render();
+    }
+
+    p.prev.addEventListener('click', () => step(-1));
+    p.next.addEventListener('click', () => step(1));
+    p.close.addEventListener('click', closePlayer);
+    p.toggle.addEventListener('click', () => {
+      if (!yt || !ready) return;
+      const S = window.YT.PlayerState;
+      yt.getPlayerState() === S.PLAYING ? yt.pauseVideo() : yt.playVideo();
+    });
+
+    return { play, isCurrent: (id) => current === id };
+  })();
+
+  // =========================================================
   //  ACTIONS & EVENTS
   // =========================================================
   function setQuery(q) {
@@ -514,6 +639,12 @@
     els.view.addEventListener('click', (e) => {
       const f = e.target.closest('[data-fav]');
       if (f) toggleFav(f.dataset.fav);
+      const p = e.target.closest('[data-play]');
+      if (p) {
+        // Queue = the songs currently shown on screen, in order
+        const queue = [...els.view.querySelectorAll('[data-play]')].map((b) => b.dataset.play);
+        Player.play(p.dataset.play, queue);
+      }
     });
     els.nextTrivia.addEventListener('click', () => showTrivia(state.triviaIndex + 1));
 

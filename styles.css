@@ -214,7 +214,7 @@ button { font-family: inherit; cursor: pointer; }
 .song-actions { display: flex; gap: 8px; margin-top: auto; padding-top: 4px; }
 .play-btn {
   flex: 1; text-align: center; text-decoration: none; font-weight: 700; font-size: 0.85rem;
-  background: var(--gold); color: #2a1608; border-radius: 999px; padding: 8px 10px;
+  background: var(--gold); color: #2a1608; border-radius: 999px; padding: 8px 10px; border: 0;
 }
 .play-btn:hover { background: var(--gold-2); }
 .fav-btn {
@@ -243,11 +243,47 @@ mark { background: rgba(242, 184, 75, 0.35); color: inherit; border-radius: 3px;
   border-radius: 999px; padding: 6px 12px; font-size: 0.8rem; font-weight: 600;
 }
 
+/* ---------- Now Playing player ---------- */
+body.has-player { padding-bottom: 360px; }
+.player {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+  background: #120905; border-top: 2px solid var(--gold);
+  box-shadow: 0 -8px 24px rgba(0,0,0,.5);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.player[hidden] { display: none; }
+.player-video {
+  max-width: 480px; margin: 0 auto; aspect-ratio: 16 / 9; background: #000;
+}
+.player-video iframe, .player-video #ytFrame { width: 100%; height: 100%; display: block; border: 0; }
+.player-bar {
+  max-width: 980px; margin: 0 auto; display: flex; align-items: center; gap: 10px;
+  padding: 8px 12px;
+}
+.player-info { flex: 1; min-width: 0; }
+.np-title, .np-sub { margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.np-title { font-weight: 700; font-size: .95rem; color: var(--gold-2); }
+.np-sub { font-size: .8rem; color: var(--muted); }
+.player-ctrls { display: flex; gap: 6px; flex: 0 0 auto; }
+.pc-btn {
+  width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line);
+  background: var(--card); color: var(--text); font-size: .95rem;
+}
+.pc-main { background: var(--gold); color: #2a1608; border-color: var(--gold); }
+.np-error { margin: 0 auto; max-width: 980px; padding: 0 12px 10px; font-size: .85rem; color: var(--gold-2); }
+.np-error a { color: var(--gold); font-weight: 700; }
+.song.playing { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(242,184,75,.35); }
+.song.playing .play-btn { background: var(--red); color: #fff; }
+.yt-link { font-size: .72rem; color: var(--muted); text-decoration: none; align-self: center; white-space: nowrap; }
+.yt-link:hover { color: var(--gold); }
+@media (max-width: 420px) { .pc-btn { width: 34px; height: 34px; } }
+
 /* ---------- Footer & toast ---------- */
 .app-footer { max-width: 980px; margin: 0 auto; padding: 18px 16px 28px; text-align: center; color: #9c8268; font-size: 0.75rem; }
 .app-footer p { margin: 4px 0; }
 .net-status.offline { color: var(--red); font-weight: 700; }
 
+body.has-player .toast { bottom: calc(130px + env(safe-area-inset-bottom)); }
 .toast {
   position: fixed; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom));
   transform: translateX(-50%) translateY(120%); opacity: 0;
