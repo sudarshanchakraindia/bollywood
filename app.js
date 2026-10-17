@@ -31,6 +31,7 @@
     tab: store.get('kk.tab', 'b1'),
     query: '',
     favs: new Set(store.get('kk.favs', [])),
+    cat: store.get('kk.cat', {}),   // selected chip per category tab, e.g. { pairs: 'Lata Mangeshkar' }
     triviaIndex: 0
   };
 
@@ -146,25 +147,55 @@
     return 0;
   };
 
+  const hiName = (n) => (state.data && state.data.names && state.data.names[n]) || n;
+
+  /** Songs live once in data.songs (with tags); collections & categories only point at them. */
   function buildIndex(data) {
-    const list = [];
-    data.bundles.forEach((b) => b.sections.forEach((sec) => sec.songs.forEach((song) => {
-      const titleKey = toKey(song.title);
-      list.push({
-        ...song,
-        bundleId: b.id, bundleTitle: b.title, sectionTitle: sec.title, sectionClass: sec.class || '',
-        k: {
-          title: titleKey,
-          titleC: compact(titleKey),
-          hiRoman: toKey(song.hi || ''),
-          hiDeva: normDeva(song.hi || ''),
-          meta: toKey(`${song.film} ${song.composer} ${song.singers} ${song.year}`),
-          composerC: compact(toKey(song.composer))
-        }
+    const inColl = {};
+    (data.collections || []).forEach((c) => c.sections.forEach((sec) => sec.ids.forEach((id) => { if (!inColl[id]) inColl[id] = c.title; })));
+    return (data.songs || [])
+      .filter((s) => !s.status)                       // 'review' / 'rejected' songs stay hidden
+      .map((song) => {
+        const titleKey = toKey(song.title);
+        const people = [...song.singers, ...(song.actors || []), song.composer];
+        return {
+          ...song,
+          bundleTitle: inColl[song.id] || '',
+          k: {
+            title: titleKey,
+            titleC: compact(titleKey),
+            hiRoman: toKey(song.hi || ''),
+            hiDeva: normDeva(`${song.hi || ''} ${people.map(hiName).join(' ')}`),
+            meta: toKey(`${song.film} ${people.join(' ')} ${song.year}`),
+            composerC: compact(toKey(song.composer))
+          }
+        };
       });
-    })));
+  }
+
+  // ---------- Auto categories from tags ----------
+  const LEAD = 'Kishore Kumar';
+  const PAIR_ORDER = ['Lata Mangeshkar', 'Asha Bhosle', 'Mohammed Rafi', 'Manna Dey', 'Mukesh'];
+  const CATS = {
+    pairs:     { title: '🎤 गायक जोड़ी', en: 'Singer Duos' },
+    composers: { title: '🎼 संगीतकार', en: 'Music Directors' },
+    actors:    { title: '🎬 अभिनेता', en: 'Actors' }
+  };
+  function groupsFor(kind) {
+    const map = new Map();
+    const add = (key, s) => { if (!map.has(key)) map.set(key, []); map.get(key).push(s); };
+    state.songs.forEach((s) => {
+      if (kind === 'pairs' && s.singers.includes(LEAD)) s.singers.filter((x) => x !== LEAD && PAIR_ORDER.includes(x)).forEach((x) => add(x, s));
+      if (kind === 'composers') add(s.composer, s);
+      if (kind === 'actors') (s.actors || []).forEach((a) => add(a, s));
+    });
+    let list = [...map.entries()].map(([key, songs]) => ({ key, songs: songs.sort((a, b) => a.year - b.year) }));
+    if (kind === 'pairs') list.sort((a, b) => PAIR_ORDER.indexOf(a.key) - PAIR_ORDER.indexOf(b.key));
+    else list = list.filter((g) => g.songs.length >= 2).sort((a, b) => b.songs.length - a.songs.length || a.key.localeCompare(b.key));
     return list;
   }
+  const groupLabel = (kind, key) => kind === 'pairs' ? `Kishore & ${key}` : key;
+  const groupLabelHi = (kind, key) => kind === 'pairs' ? `किशोर और ${hiName(key)}` : hiName(key);
 
   /** Score a song for a query. 0 = no match. */
   function scoreSong(song, q) {
@@ -243,7 +274,8 @@
           ${thumbHtml(s)}
         </div>
         <div class="chips">
-          <span class="chip">🎤 ${esc(s.singers)}</span>
+          <span class="chip">🎤 ${esc(s.singers.join(', '))}</span>
+          ${s.actors && s.actors.length ? `<span class="chip">⭐ ${esc(s.actors.join(', '))}</span>` : ''}
           ${showBundle ? `<span class="chip">${esc(s.bundleTitle)}</span>` : ''}
         </div>
         ${showMeter && s.pop ? `
@@ -279,7 +311,8 @@
     </div>`;
 
   function renderTabs() {
-    const tabs = [...state.data.bundles.map((b) => ({ id: b.id, title: b.title, hi: b.hi })),
+    const tabs = [...state.data.collections.map((b) => ({ id: b.id, title: b.title, hi: b.hi })),
+      ...Object.entries(CATS).map(([id, c]) => ({ id, title: c.title, hi: c.en })),
       { id: 'favs', title: '♥ Favourites', hi: `पसंदीदा (${state.favs.size})` }];
     els.tabs.innerHTML = tabs.map((t) => `
       <button class="tab" role="tab" data-tab="${t.id}" aria-selected="${t.id === state.tab && !state.query}">
@@ -301,16 +334,37 @@
             <h3 id="h-${sec.id}">${esc(sec.title)}</h3>
             <span class="hi" lang="hi">${esc(sec.hi)}</span>
           </div>
-          <p class="section-desc">${esc(sec.desc)} · ${sec.songs.length} songs</p>
+          <p class="section-desc">${esc(sec.desc)} · ${secSongs(sec).length} songs</p>
           ${isTiered && sec.meter ? `
             <div class="meter" aria-label="Tier popularity ${sec.meter} out of 100">
               <div class="meter-label"><span>📊 Popularity Meter</span><span>${sec.meter}/100</span></div>
               <div class="meter-track"><div class="meter-fill" data-w="${sec.meter}"></div></div>
             </div>` : ''}
           <ul class="song-grid">
-            ${sec.songs.map((raw) => songCard(state.songs.find((x) => x.id === raw.id), { showMeter: isTiered })).join('')}
+            ${secSongs(sec).map((s) => songCard(s, { showMeter: isTiered })).join('')}
           </ul>
         </section>`).join('')}`;
+  }
+
+  const secSongs = (sec) => sec.ids.map((id) => state.songs.find((x) => x.id === id)).filter(Boolean);
+
+  function renderCategory(kind) {
+    const groups = groupsFor(kind);
+    if (!groups.length) return '<p class="empty">अभी कोई गाना नहीं।</p>';
+    let key = state.cat[kind];
+    if (!groups.some((g) => g.key === key)) key = groups[0].key;
+    const g = groups.find((x) => x.key === key);
+    return `
+      <div class="cat-chips" role="tablist" aria-label="${esc(CATS[kind].en)}">
+        ${groups.map((x) => `<button class="cat-chip" data-cat="${esc(kind)}|${esc(x.key)}" aria-selected="${x.key === key}">
+          ${esc(groupLabel(kind, x.key))} <small lang="hi">${esc(groupLabelHi(kind, x.key))}</small><b>${x.songs.length}</b></button>`).join('')}
+      </div>
+      <div class="bundle-head">
+        ${playAllBtns()}
+        <h2>${esc(groupLabel(kind, key))} <span lang="hi" style="font-weight:400;color:var(--muted);font-size:.9rem">· ${esc(groupLabelHi(kind, key))}</span></h2>
+        <p>${g.songs.length} songs · ${esc(CATS[kind].en)}</p>
+      </div>
+      <ul class="song-grid">${g.songs.map((s) => songCard(s, { showBundle: true })).join('')}</ul>`;
   }
 
   function renderFavs() {
@@ -336,7 +390,8 @@
     let html;
     if (state.query.trim()) html = renderSearch();
     else if (state.tab === 'favs') html = renderFavs();
-    else html = renderBundle(state.data.bundles.find((b) => b.id === state.tab) || state.data.bundles[0]);
+    else if (CATS[state.tab]) html = renderCategory(state.tab);
+    else html = renderBundle(state.data.collections.find((b) => b.id === state.tab) || state.data.collections[0]);
     els.view.innerHTML = html;
     els.clear.hidden = !state.query;
     // animate meters
@@ -711,6 +766,12 @@
     els.view.addEventListener('click', (e) => {
       const f = e.target.closest('[data-fav]');
       if (f) toggleFav(f.dataset.fav);
+      const c = e.target.closest('[data-cat]');
+      if (c) {
+        const [kind, key] = c.dataset.cat.split('|');
+        state.cat[kind] = key; store.set('kk.cat', state.cat); render();
+        return;
+      }
       const pa = e.target.closest('[data-playall]');
       if (pa) {
         let queue = [...els.view.querySelectorAll('[data-play]')].map((b) => b.dataset.play);
@@ -775,7 +836,7 @@
       return;
     }
     state.songs = buildIndex(state.data);
-    if (state.tab !== 'favs' && !state.data.bundles.some((b) => b.id === state.tab)) state.tab = 'b1';
+    if (state.tab !== 'favs' && !CATS[state.tab] && !state.data.collections.some((b) => b.id === state.tab)) state.tab = 'b1';
     render();
     showTrivia(dayOfYear());
 

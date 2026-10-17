@@ -301,6 +301,21 @@ body.has-player { padding-bottom: 360px; }
 }
 @media (max-width: 360px) { .thumb { flex-basis: 104px; width: 104px; } }
 
+/* Category chips (singer duos / composers / actors) */
+.cat-chips { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding: 4px 0 12px; }
+.cat-chips::-webkit-scrollbar { display: none; }
+.cat-chip {
+  flex: 0 0 auto; text-align: left; border: 1px solid var(--line); background: var(--card);
+  color: var(--text); border-radius: 12px; padding: 7px 12px; font-size: .85rem; font-weight: 600; position: relative;
+}
+.cat-chip small { display: block; font-weight: 400; color: var(--muted); font-size: .72rem; }
+.cat-chip b {
+  position: absolute; top: -6px; right: -6px; background: var(--red); color: #fff; font-size: .65rem;
+  min-width: 20px; height: 20px; border-radius: 999px; display: grid; place-items: center; padding: 0 5px;
+}
+.cat-chip[aria-selected="true"] { background: var(--gold); color: #2a1608; border-color: var(--gold); }
+.cat-chip[aria-selected="true"] small { color: #5a3a1a; }
+
 /* Mode toggle + Play-all */
 .mode-btn {
   margin-top: 4px; padding: 3px 10px; font-size: .75rem; font-weight: 700;

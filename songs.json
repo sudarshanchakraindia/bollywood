@@ -1,140 +1,1452 @@
 {
-  "version": "1.2.1",
-  "bundles": [
+ "version": "2.0.0",
+ "names": {
+  "Kishore Kumar": "किशोर कुमार",
+  "Lata Mangeshkar": "लता मंगेशकर",
+  "Asha Bhosle": "आशा भोसले",
+  "Mohammed Rafi": "मोहम्मद रफ़ी",
+  "Manna Dey": "मन्ना डे",
+  "Mukesh": "मुकेश",
+  "Usha Mangeshkar": "उषा मंगेशकर",
+  "Shailendra Singh": "शैलेंद्र सिंह",
+  "R.D. Burman": "आर.डी. बर्मन",
+  "S.D. Burman": "एस.डी. बर्मन",
+  "Laxmikant-Pyarelal": "लक्ष्मीकांत-प्यारेलाल",
+  "Shankar-Jaikishan": "शंकर-जयकिशन",
+  "Hemant Kumar": "हेमंत कुमार",
+  "Bappi Lahiri": "बप्पी लाहिड़ी",
+  "Ravi": "रवि",
+  "Shiv-Hari": "शिव-हरि",
+  "Rajesh Khanna": "राजेश खन्ना",
+  "Amitabh Bachchan": "अमिताभ बच्चन",
+  "Dharmendra": "धर्मेंद्र",
+  "Dev Anand": "देव आनंद",
+  "Rishi Kapoor": "ऋषि कपूर",
+  "Jeetendra": "जीतेंद्र",
+  "Sanjeev Kumar": "संजीव कुमार",
+  "Shashi Kapoor": "शशि कपूर",
+  "Randhir Kapoor": "रणधीर कपूर",
+  "Sunil Dutt": "सुनील दत्त",
+  "Vinod Khanna": "विनोद खन्ना",
+  "Vinod Mehra": "विनोद मेहरा",
+  "Amol Palekar": "अमोल पालेकर",
+  "Sanjay Dutt": "संजय दत्त",
+  "Shatrughan Sinha": "शत्रुघ्न सिन्हा",
+  "Mehmood": "महमूद",
+  "Ashok Kumar": "अशोक कुमार",
+  "Anoop Kumar": "अनूप कुमार",
+  "Vijay Arora": "विजय अरोड़ा",
+  "Sharmila Tagore": "शर्मिला टैगोर",
+  "Asha Parekh": "आशा पारेख",
+  "Hema Malini": "हेमा मालिनी",
+  "Mumtaz": "मुमताज़",
+  "Zeenat Aman": "ज़ीनत अमान",
+  "Rekha": "रेखा",
+  "Jaya Bhaduri": "जया भादुड़ी",
+  "Neetu Singh": "नीतू सिंह",
+  "Tina Munim": "टीना मुनीम",
+  "Waheeda Rehman": "वहीदा रहमान",
+  "Moushumi Chatterjee": "मौसमी चटर्जी",
+  "Suchitra Sen": "सुचित्रा सेन",
+  "Saira Banu": "सायरा बानो",
+  "Smita Patil": "स्मिता पाटिल",
+  "Madhubala": "मधुबाला",
+  "Nutan": "नूतन",
+  "Parveen Babi": "परवीन बाबी",
+  "Kalpana Kartik": "कल्पना कार्तिक",
+  "Rakhee": "राखी",
+  "Dimple Kapadia": "डिंपल कपाड़िया"
+ },
+ "songs": [
+  {
+   "id": "s101",
+   "yt": "-Px0efU00uQ",
+   "title": "O Mere Dil Ke Chain",
+   "hi": "ओ मेरे दिल के चैन",
+   "film": "Mere Jeevan Saathi",
+   "year": 1972,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "pop": 98,
+   "actors": [
+    "Rajesh Khanna"
+   ]
+  },
+  {
+   "id": "s102",
+   "yt": "jKaGdsxODk0",
+   "title": "Mere Sapnon Ki Rani",
+   "hi": "मेरे सपनों की रानी",
+   "film": "Aradhana",
+   "year": 1969,
+   "composer": "S.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "pop": 99,
+   "actors": [
+    "Rajesh Khanna",
+    "Sharmila Tagore"
+   ]
+  },
+  {
+   "id": "s103",
+   "yt": "4sQeiHSXVfQ",
+   "embed": false,
+   "title": "Roop Tera Mastana",
+   "hi": "रूप तेरा मस्ताना",
+   "film": "Aradhana",
+   "year": 1969,
+   "composer": "S.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "pop": 96,
+   "actors": [
+    "Rajesh Khanna",
+    "Sharmila Tagore"
+   ]
+  },
+  {
+   "id": "s104",
+   "yt": "-QcSLKdYHXs",
+   "title": "Yeh Shaam Mastani",
+   "hi": "ये शाम मस्तानी",
+   "film": "Kati Patang",
+   "year": 1970,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "pop": 97,
+   "actors": [
+    "Rajesh Khanna",
+    "Asha Parekh"
+   ]
+  },
+  {
+   "id": "s105",
+   "yt": "LlvoY4v5zm0",
+   "title": "Zindagi Ek Safar Hai Suhana",
+   "hi": "ज़िंदगी एक सफ़र है सुहाना",
+   "film": "Andaz",
+   "year": 1971,
+   "composer": "Shankar-Jaikishan",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "pop": 97,
+   "actors": [
+    "Rajesh Khanna",
+    "Hema Malini"
+   ]
+  },
+  {
+   "id": "s106",
+   "yt": "zOZPx0qFCjY",
+   "title": "Chingari Koi Bhadke",
+   "hi": "चिंगारी कोई भड़के",
+   "film": "Amar Prem",
+   "year": 1972,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "pop": 95,
+   "actors": [
+    "Rajesh Khanna",
+    "Sharmila Tagore"
+   ]
+  },
+  {
+   "id": "s107",
+   "yt": "_mK0kQ1vfWs",
+   "title": "Kuch To Log Kahenge",
+   "hi": "कुछ तो लोग कहेंगे",
+   "film": "Amar Prem",
+   "year": 1972,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "pop": 95,
+   "actors": [
+    "Rajesh Khanna",
+    "Sharmila Tagore"
+   ]
+  },
+  {
+   "id": "s201",
+   "yt": "aymaeGv3BDc",
+   "embed": false,
+   "title": "Zindagi Ke Safar Mein Guzar Jaate Hain",
+   "hi": "ज़िंदगी के सफ़र में गुज़र जाते हैं",
+   "film": "Aap Ki Kasam",
+   "year": 1974,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "pop": 90,
+   "actors": [
+    "Rajesh Khanna",
+    "Mumtaz"
+   ]
+  },
+  {
+   "id": "s202",
+   "yt": "A6Nh4dE7HNQ",
+   "title": "Yeh Jo Mohabbat Hai",
+   "hi": "ये जो मोहब्बत है",
+   "film": "Kati Patang",
+   "year": 1970,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "pop": 84,
+   "actors": [
+    "Rajesh Khanna",
+    "Asha Parekh"
+   ]
+  },
+  {
+   "id": "s203",
+   "yt": "8nWPwVzAj3g",
+   "title": "Diye Jalte Hain",
+   "hi": "दीये जलते हैं",
+   "film": "Namak Haraam",
+   "year": 1973,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "pop": 80,
+   "actors": [
+    "Rajesh Khanna",
+    "Amitabh Bachchan"
+   ]
+  },
+  {
+   "id": "s204",
+   "yt": "qzCOQbbAaJw",
+   "title": "Mere Naseeb Mein Ae Dost",
+   "hi": "मेरे नसीब में ऐ दोस्त",
+   "film": "Do Raaste",
+   "year": 1969,
+   "composer": "Laxmikant-Pyarelal",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "pop": 76,
+   "actors": [
+    "Rajesh Khanna",
+    "Mumtaz"
+   ]
+  },
+  {
+   "id": "s205",
+   "yt": "5EzLaiNQpRk",
+   "title": "Achha To Hum Chalte Hain",
+   "hi": "अच्छा तो हम चलते हैं",
+   "film": "Aan Milo Sajna",
+   "year": 1970,
+   "composer": "Laxmikant-Pyarelal",
+   "singers": [
+    "Kishore Kumar",
+    "Lata Mangeshkar"
+   ],
+   "pop": 85,
+   "actors": [
+    "Rajesh Khanna",
+    "Asha Parekh"
+   ]
+  },
+  {
+   "id": "s206",
+   "yt": "ZbmT0Oyg4X8",
+   "title": "Jai Jai Shiv Shankar",
+   "hi": "जय जय शिव शंकर",
+   "film": "Aap Ki Kasam",
+   "year": 1974,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Lata Mangeshkar"
+   ],
+   "pop": 86,
+   "actors": [
+    "Rajesh Khanna",
+    "Mumtaz"
+   ]
+  },
+  {
+   "id": "s207",
+   "yt": "9iwPrblnCf8",
+   "embed": false,
+   "title": "Kora Kagaz Tha Yeh Man Mera",
+   "hi": "कोरा काग़ज़ था ये मन मेरा",
+   "film": "Aradhana",
+   "year": 1969,
+   "composer": "S.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Lata Mangeshkar"
+   ],
+   "pop": 87,
+   "actors": [
+    "Rajesh Khanna",
+    "Sharmila Tagore"
+   ]
+  },
+  {
+   "id": "s301",
+   "yt": "G3WU3qqdX84",
+   "embed": false,
+   "title": "Main Shayar Badnaam",
+   "hi": "मैं शायर बदनाम",
+   "film": "Namak Haraam",
+   "year": 1973,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "pop": 66,
+   "actors": [
+    "Rajesh Khanna"
+   ]
+  },
+  {
+   "id": "s302",
+   "yt": "-qMdbL15rvk",
+   "embed": false,
+   "title": "Pyar Deewana Hota Hai",
+   "hi": "प्यार दीवाना होता है",
+   "film": "Kati Patang",
+   "year": 1970,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "pop": 70,
+   "actors": [
+    "Rajesh Khanna",
+    "Asha Parekh"
+   ]
+  },
+  {
+   "id": "s303",
+   "yt": "yJuWjV5tlHY",
+   "title": "Woh Shaam Kuch Ajeeb Thi",
+   "hi": "वो शाम कुछ अजीब थी",
+   "film": "Khamoshi",
+   "year": 1969,
+   "composer": "Hemant Kumar",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "pop": 68,
+   "actors": [
+    "Rajesh Khanna",
+    "Waheeda Rehman"
+   ]
+  },
+  {
+   "id": "s304",
+   "yt": "BmAoNKeI6ZQ",
+   "title": "Yeh Kya Hua",
+   "hi": "ये क्या हुआ",
+   "film": "Amar Prem",
+   "year": 1972,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "pop": 64,
+   "actors": [
+    "Rajesh Khanna",
+    "Sharmila Tagore"
+   ]
+  },
+  {
+   "id": "s305",
+   "yt": "CcrXejLuQ9M",
+   "title": "Chala Jaata Hoon",
+   "hi": "चला जाता हूँ",
+   "film": "Mere Jeevan Saathi",
+   "year": 1972,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "pop": 62,
+   "actors": [
+    "Rajesh Khanna"
+   ]
+  },
+  {
+   "id": "s306",
+   "yt": "uIi36xT_YYo",
+   "title": "Diwana Leke Aaya Hai",
+   "hi": "दीवाना लेके आया है",
+   "film": "Mere Jeevan Saathi",
+   "year": 1972,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "pop": 55,
+   "actors": [
+    "Rajesh Khanna"
+   ]
+  },
+  {
+   "id": "s307",
+   "yt": "IsKN8iylATk",
+   "title": "Mere Dil Mein Aaj Kya Hai",
+   "hi": "मेरे दिल में आज क्या है",
+   "film": "Daag",
+   "year": 1973,
+   "composer": "Laxmikant-Pyarelal",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "pop": 60,
+   "actors": [
+    "Rajesh Khanna",
+    "Sharmila Tagore"
+   ]
+  },
+  {
+   "id": "s401",
+   "yt": "vHg9WMmSfZ4",
+   "embed": false,
+   "title": "Ek Ajnabee Haseena Se",
+   "hi": "एक अजनबी हसीना से",
+   "film": "Ajnabee",
+   "year": 1974,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Rajesh Khanna",
+    "Zeenat Aman"
+   ]
+  },
+  {
+   "id": "s402",
+   "yt": "kDPNcxHGkmY",
+   "embed": false,
+   "title": "Musafir Hoon Yaaron",
+   "hi": "मुसाफ़िर हूँ यारों",
+   "film": "Parichay",
+   "year": 1972,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Jeetendra"
+   ]
+  },
+  {
+   "id": "s403",
+   "yt": "6pH_ZSV2Wvk",
+   "embed": false,
+   "title": "Meri Bheegi Bheegi Si",
+   "hi": "मेरी भीगी भीगी सी",
+   "film": "Anamika",
+   "year": 1973,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Jeetendra",
+    "Jaya Bhaduri"
+   ]
+  },
+  {
+   "id": "s404",
+   "yt": "Lw7RQj6SE4Q",
+   "title": "Aanewala Pal Janewala Hai",
+   "hi": "आनेवाला पल जानेवाला है",
+   "film": "Golmaal",
+   "year": 1979,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Amol Palekar"
+   ]
+  },
+  {
+   "id": "s405",
+   "yt": "5So8zWTUCM8",
+   "title": "Rimjhim Gire Saawan",
+   "hi": "रिमझिम गिरे सावन",
+   "film": "Manzil",
+   "year": 1979,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Amitabh Bachchan",
+    "Moushumi Chatterjee"
+   ]
+  },
+  {
+   "id": "s406",
+   "yt": "jls21NtYkMk",
+   "title": "Tere Bina Zindagi Se Koi",
+   "hi": "तेरे बिना ज़िंदगी से कोई",
+   "film": "Aandhi",
+   "year": 1975,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Lata Mangeshkar"
+   ],
+   "actors": [
+    "Sanjeev Kumar",
+    "Suchitra Sen"
+   ]
+  },
+  {
+   "id": "s407",
+   "yt": "XINI9JtypMw",
+   "title": "Mere Saamne Wali Khidki Mein",
+   "hi": "मेरे सामने वाली खिड़की में",
+   "film": "Padosan",
+   "year": 1968,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Sunil Dutt",
+    "Saira Banu"
+   ]
+  },
+  {
+   "id": "s408",
+   "yt": "3kvlg-kVVgs",
+   "title": "Tum Bin Jaoon Kahan",
+   "hi": "तुम बिन जाऊँ कहाँ",
+   "film": "Pyar Ka Mausam",
+   "year": 1969,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Shashi Kapoor"
+   ]
+  },
+  {
+   "id": "s501",
+   "yt": "cBqq_3d_tO0",
+   "title": "Om Shanti Om",
+   "hi": "ओम शांति ओम",
+   "film": "Karz",
+   "year": 1980,
+   "composer": "Laxmikant-Pyarelal",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Rishi Kapoor"
+   ]
+  },
+  {
+   "id": "s502",
+   "yt": "ORlfGLKTkUs",
+   "title": "My Name Is Anthony Gonsalves",
+   "hi": "माई नेम इज़ एंथनी गोंज़ाल्विस",
+   "film": "Amar Akbar Anthony",
+   "year": 1977,
+   "composer": "Laxmikant-Pyarelal",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Amitabh Bachchan"
+   ]
+  },
+  {
+   "id": "s503",
+   "yt": "X3jxoY289M8",
+   "title": "Aate Jaate Khoobsurat Awara Sadkon Pe",
+   "hi": "आते जाते ख़ूबसूरत आवारा सड़कों पे",
+   "film": "Anurodh",
+   "year": 1977,
+   "composer": "Laxmikant-Pyarelal",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Rajesh Khanna"
+   ]
+  },
+  {
+   "id": "s504",
+   "yt": "hsfcCJ034Fk",
+   "title": "Aap Ke Anurodh Pe",
+   "hi": "आप के अनुरोध पे",
+   "film": "Anurodh",
+   "year": 1977,
+   "composer": "Laxmikant-Pyarelal",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Rajesh Khanna"
+   ]
+  },
+  {
+   "id": "s505",
+   "yt": "_1MYc_9ylE8",
+   "embed": false,
+   "title": "Chal Chal Chal Mere Haathi",
+   "hi": "चल चल चल मेरे हाथी",
+   "film": "Haathi Mere Saathi",
+   "year": 1971,
+   "composer": "Laxmikant-Pyarelal",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Rajesh Khanna"
+   ]
+  },
+  {
+   "id": "s506",
+   "yt": "pPAY45ttDW8",
+   "title": "Mere Mehboob Qayamat Hogi",
+   "hi": "मेरे महबूब क़यामत होगी",
+   "film": "Mr. X in Bombay",
+   "year": 1964,
+   "composer": "Laxmikant-Pyarelal",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Kishore Kumar"
+   ]
+  },
+  {
+   "id": "s507",
+   "yt": "ofVVR2OWO0g",
+   "title": "Gaadi Bula Rahi Hai",
+   "hi": "गाड़ी बुला रही है",
+   "film": "Dost",
+   "year": 1974,
+   "composer": "Laxmikant-Pyarelal",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Dharmendra"
+   ]
+  },
+  {
+   "id": "s601",
+   "yt": "bnYyvOknqYo",
+   "title": "Ek Main Aur Ek Tu",
+   "hi": "एक मैं और एक तू",
+   "film": "Khel Khel Mein",
+   "year": 1975,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Asha Bhosle"
+   ],
+   "actors": [
+    "Rishi Kapoor",
+    "Neetu Singh"
+   ]
+  },
+  {
+   "id": "s602",
+   "yt": "V3tB5Wu2ifg",
+   "title": "Jaane Jaan Dhoondta Phir Raha",
+   "hi": "जाने जाँ ढूँढता फिर रहा",
+   "film": "Jawani Diwani",
+   "year": 1972,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Asha Bhosle"
+   ],
+   "actors": [
+    "Randhir Kapoor",
+    "Jaya Bhaduri"
+   ]
+  },
+  {
+   "id": "s603",
+   "yt": "yobWSB9Xl38",
+   "title": "Haal Kaisa Hai Janab Ka",
+   "hi": "हाल कैसा है जनाब का",
+   "film": "Chalti Ka Naam Gaadi",
+   "year": 1958,
+   "composer": "S.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Asha Bhosle"
+   ],
+   "actors": [
+    "Kishore Kumar",
+    "Madhubala"
+   ]
+  },
+  {
+   "id": "s604",
+   "yt": "QUyFoyHT8s8",
+   "title": "Chhod Do Aanchal Zamana Kya Kahega",
+   "hi": "छोड़ दो आँचल ज़माना क्या कहेगा",
+   "film": "Paying Guest",
+   "year": 1957,
+   "composer": "S.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Asha Bhosle"
+   ],
+   "actors": [
+    "Dev Anand",
+    "Nutan"
+   ]
+  },
+  {
+   "id": "s605",
+   "yt": "F4-MjRwZteQ",
+   "title": "Ek Haseena Thi",
+   "hi": "एक हसीना थी",
+   "film": "Karz",
+   "year": 1980,
+   "composer": "Laxmikant-Pyarelal",
+   "singers": [
+    "Kishore Kumar",
+    "Asha Bhosle"
+   ],
+   "actors": [
+    "Rishi Kapoor",
+    "Tina Munim"
+   ]
+  },
+  {
+   "id": "s606",
+   "yt": "5SiHK1LVHjU",
+   "title": "Hawa Ke Saath Saath",
+   "hi": "हवा के साथ साथ",
+   "film": "Seeta Aur Geeta",
+   "year": 1972,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Asha Bhosle"
+   ],
+   "actors": [
+    "Sanjeev Kumar",
+    "Hema Malini"
+   ]
+  },
+  {
+   "id": "s607",
+   "yt": "Tforerprg3o",
+   "title": "Aaj Rapat Jaayen",
+   "hi": "आज रपट जाएँ",
+   "film": "Namak Halaal",
+   "year": 1982,
+   "composer": "Bappi Lahiri",
+   "singers": [
+    "Kishore Kumar",
+    "Asha Bhosle"
+   ],
+   "actors": [
+    "Amitabh Bachchan",
+    "Smita Patil"
+   ]
+  },
+  {
+   "id": "s701",
+   "yt": "zMGYCKr5trw",
+   "title": "Yeh Raatein Yeh Mausam",
+   "hi": "ये रातें ये मौसम",
+   "film": "Dilli Ka Thug",
+   "year": 1958,
+   "composer": "Ravi",
+   "singers": [
+    "Kishore Kumar",
+    "Asha Bhosle"
+   ],
+   "actors": [
+    "Kishore Kumar",
+    "Nutan"
+   ]
+  },
+  {
+   "id": "s702",
+   "yt": "kYcSXvQyceE",
+   "title": "Aankhon Mein Kya Ji",
+   "hi": "आँखों में क्या जी",
+   "film": "Nau Do Gyarah",
+   "year": 1957,
+   "composer": "S.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Asha Bhosle"
+   ],
+   "actors": [
+    "Dev Anand",
+    "Kalpana Kartik"
+   ]
+  },
+  {
+   "id": "s703",
+   "yt": "0QlQo5erDJE",
+   "title": "Kehdoon Tumhe",
+   "hi": "कह दूँ तुम्हें",
+   "film": "Deewaar",
+   "year": 1975,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Asha Bhosle"
+   ],
+   "actors": [
+    "Shashi Kapoor",
+    "Neetu Singh"
+   ]
+  },
+  {
+   "id": "s705",
+   "yt": "bkVpqTrFmEA",
+   "title": "Tum Saath Ho Jab Apne",
+   "hi": "तुम साथ हो जब अपने",
+   "film": "Kaalia",
+   "year": 1981,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Asha Bhosle"
+   ],
+   "actors": [
+    "Amitabh Bachchan",
+    "Parveen Babi"
+   ]
+  },
+  {
+   "id": "s706",
+   "yt": "e4ScxnmzTXQ",
+   "title": "Sapna Mera Toot Gaya",
+   "hi": "सपना मेरा टूट गया",
+   "film": "Khel Khel Mein",
+   "year": 1975,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Asha Bhosle"
+   ],
+   "actors": [
+    "Rishi Kapoor",
+    "Neetu Singh"
+   ]
+  },
+  {
+   "id": "n101",
+   "title": "Tere Mere Milan Ki Yeh Raina",
+   "hi": "तेरे मेरे मिलन की ये रैना",
+   "film": "Abhimaan",
+   "year": 1973,
+   "composer": "S.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Lata Mangeshkar"
+   ],
+   "actors": [
+    "Amitabh Bachchan",
+    "Jaya Bhaduri"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "n102",
+   "title": "Bheegi Bheegi Raaton Mein",
+   "hi": "भीगी भीगी रातों में",
+   "film": "Ajnabee",
+   "year": 1974,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Lata Mangeshkar"
+   ],
+   "actors": [
+    "Rajesh Khanna",
+    "Zeenat Aman"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "n103",
+   "title": "Hum Dono Do Premi",
+   "hi": "हम दोनों दो प्रेमी",
+   "film": "Ajnabee",
+   "year": 1974,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Lata Mangeshkar"
+   ],
+   "actors": [
+    "Rajesh Khanna",
+    "Zeenat Aman"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "n104",
+   "title": "Is Mod Se Jaate Hain",
+   "hi": "इस मोड़ से जाते हैं",
+   "film": "Aandhi",
+   "year": 1975,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Lata Mangeshkar"
+   ],
+   "actors": [
+    "Sanjeev Kumar",
+    "Suchitra Sen"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "n105",
+   "title": "Tum Aa Gaye Ho Noor Aa Gaya",
+   "hi": "तुम आ गए हो नूर आ गया",
+   "film": "Aandhi",
+   "year": 1975,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Lata Mangeshkar"
+   ],
+   "actors": [
+    "Sanjeev Kumar",
+    "Suchitra Sen"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "n106",
+   "title": "Gum Hai Kisi Ke Pyar Mein",
+   "hi": "गुम है किसी के प्यार में",
+   "film": "Rampur Ka Lakshman",
+   "year": 1972,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Lata Mangeshkar"
+   ],
+   "actors": [
+    "Randhir Kapoor",
+    "Rekha"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "n107",
+   "title": "Kasme Vaade Nibhayenge Hum",
+   "hi": "कसमें वादे निभाएँगे हम",
+   "film": "Kasme Vaade",
+   "year": 1978,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Lata Mangeshkar"
+   ],
+   "actors": [
+    "Amitabh Bachchan",
+    "Rakhee"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "n108",
+   "title": "Holi Ke Din",
+   "hi": "होली के दिन",
+   "film": "Sholay",
+   "year": 1975,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Lata Mangeshkar"
+   ],
+   "actors": [
+    "Dharmendra",
+    "Hema Malini"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "n109",
+   "title": "Dekha Ek Khwab",
+   "hi": "देखा एक ख़्वाब",
+   "film": "Silsila",
+   "year": 1981,
+   "composer": "Shiv-Hari",
+   "singers": [
+    "Kishore Kumar",
+    "Lata Mangeshkar"
+   ],
+   "actors": [
+    "Amitabh Bachchan",
+    "Rekha"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "n110",
+   "title": "Aap Ki Aankhon Mein Kuch",
+   "hi": "आप की आँखों में कुछ",
+   "film": "Ghar",
+   "year": 1978,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Lata Mangeshkar"
+   ],
+   "actors": [
+    "Vinod Mehra",
+    "Rekha"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "n111",
+   "title": "Kya Yehi Pyar Hai",
+   "hi": "क्या यही प्यार है",
+   "film": "Rocky",
+   "year": 1981,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Lata Mangeshkar"
+   ],
+   "actors": [
+    "Sanjay Dutt",
+    "Tina Munim"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "n112",
+   "title": "Saagar Kinare",
+   "hi": "सागर किनारे",
+   "film": "Saagar",
+   "year": 1985,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Lata Mangeshkar"
+   ],
+   "actors": [
+    "Rishi Kapoor",
+    "Dimple Kapadia"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "n201",
+   "title": "Sa Re Ga Ma",
+   "hi": "सा रे गा मा",
+   "film": "Chupke Chupke",
+   "year": 1975,
+   "composer": "S.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Mohammed Rafi"
+   ],
+   "actors": [
+    "Dharmendra",
+    "Amitabh Bachchan"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "n202",
+   "title": "Ek Rasta Do Rahi",
+   "hi": "एक रास्ता दो राही",
+   "film": "Ram Balram",
+   "year": 1980,
+   "composer": "Laxmikant-Pyarelal",
+   "singers": [
+    "Kishore Kumar",
+    "Mohammed Rafi"
+   ],
+   "actors": [
+    "Dharmendra",
+    "Amitabh Bachchan"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "n203",
+   "title": "Bane Chahe Dushman Zamana Hamara",
+   "hi": "बने चाहे दुश्मन ज़माना हमारा",
+   "film": "Dostana",
+   "year": 1980,
+   "composer": "Laxmikant-Pyarelal",
+   "singers": [
+    "Kishore Kumar",
+    "Mohammed Rafi"
+   ],
+   "actors": [
+    "Amitabh Bachchan",
+    "Shatrughan Sinha"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "n204",
+   "title": "Mile Jo Kadi Kadi",
+   "hi": "मिले जो कड़ी कड़ी",
+   "film": "Kasme Vaade",
+   "year": 1978,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Mohammed Rafi",
+    "Asha Bhosle"
+   ],
+   "actors": [
+    "Amitabh Bachchan",
+    "Randhir Kapoor"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "n205",
+   "title": "Humko Tumse Ho Gaya Hai Pyar",
+   "hi": "हमको तुमसे हो गया है प्यार",
+   "film": "Amar Akbar Anthony",
+   "year": 1977,
+   "composer": "Laxmikant-Pyarelal",
+   "singers": [
+    "Kishore Kumar",
+    "Mohammed Rafi",
+    "Mukesh",
+    "Lata Mangeshkar"
+   ],
+   "actors": [
+    "Amitabh Bachchan",
+    "Vinod Khanna",
+    "Rishi Kapoor"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "n206",
+   "title": "Yaadon Ki Baaraat",
+   "hi": "यादों की बारात",
+   "film": "Yaadon Ki Baaraat",
+   "year": 1973,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Mohammed Rafi"
+   ],
+   "actors": [
+    "Dharmendra",
+    "Vijay Arora"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "n207",
+   "title": "Jaanu Meri Jaan",
+   "hi": "जानू मेरी जान",
+   "film": "Shaan",
+   "year": 1980,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Mohammed Rafi",
+    "Asha Bhosle",
+    "Usha Mangeshkar"
+   ],
+   "actors": [
+    "Amitabh Bachchan",
+    "Shashi Kapoor"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "n208",
+   "title": "Hum Premi Prem Karna Jaanen",
+   "hi": "हम प्रेमी प्रेम करना जानें",
+   "film": "Parvarish",
+   "year": 1977,
+   "composer": "Laxmikant-Pyarelal",
+   "singers": [
+    "Kishore Kumar",
+    "Mohammed Rafi",
+    "Shailendra Singh"
+   ],
+   "actors": [
+    "Amitabh Bachchan",
+    "Vinod Khanna"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "n301",
+   "title": "Babu Samjho Ishare",
+   "hi": "बाबू समझो इशारे",
+   "film": "Chalti Ka Naam Gaadi",
+   "year": 1958,
+   "composer": "S.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Manna Dey"
+   ],
+   "actors": [
+    "Kishore Kumar",
+    "Ashok Kumar",
+    "Anoop Kumar"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "n302",
+   "title": "Ek Chatur Naar",
+   "hi": "एक चतुर नार",
+   "film": "Padosan",
+   "year": 1968,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Manna Dey"
+   ],
+   "actors": [
+    "Sunil Dutt",
+    "Mehmood",
+    "Kishore Kumar"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "n303",
+   "title": "Yeh Dosti Hum Nahin Todenge",
+   "hi": "ये दोस्ती हम नहीं तोड़ेंगे",
+   "film": "Sholay",
+   "year": 1975,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Manna Dey"
+   ],
+   "actors": [
+    "Amitabh Bachchan",
+    "Dharmendra"
+   ],
+   "status": "review"
+  }
+ ],
+ "collections": [
+  {
+   "id": "b1",
+   "title": "Kishore × Rajesh Khanna",
+   "hi": "किशोर × राजेश खन्ना",
+   "subtitle": "The voice and the superstar — ranked on a fan Popularity Meter (editorial estimate).",
+   "sections": [
     {
-      "id": "b1",
-      "title": "Kishore × Rajesh Khanna",
-      "hi": "किशोर × राजेश खन्ना",
-      "subtitle": "The voice and the superstar — ranked on a fan Popularity Meter (editorial estimate).",
-      "sections": [
-        {
-          "id": "b1-t1", "class": "tier-1", "meter": 98,
-          "title": "Tier 1 · Evergreen Blockbusters", "hi": "सदाबहार ब्लॉकबस्टर",
-          "desc": "The songs every generation knows by heart.",
-          "songs": [
-            { "id": "s101", "yt": "-Px0efU00uQ", "title": "O Mere Dil Ke Chain", "hi": "ओ मेरे दिल के चैन", "film": "Mere Jeevan Saathi", "year": 1972, "composer": "R.D. Burman", "singers": "Kishore Kumar", "pop": 98 },
-            { "id": "s102", "yt": "jKaGdsxODk0", "title": "Mere Sapnon Ki Rani", "hi": "मेरे सपनों की रानी", "film": "Aradhana", "year": 1969, "composer": "S.D. Burman", "singers": "Kishore Kumar", "pop": 99 },
-            { "id": "s103", "yt": "4sQeiHSXVfQ", "embed": false, "title": "Roop Tera Mastana", "hi": "रूप तेरा मस्ताना", "film": "Aradhana", "year": 1969, "composer": "S.D. Burman", "singers": "Kishore Kumar", "pop": 96 },
-            { "id": "s104", "yt": "-QcSLKdYHXs", "title": "Yeh Shaam Mastani", "hi": "ये शाम मस्तानी", "film": "Kati Patang", "year": 1970, "composer": "R.D. Burman", "singers": "Kishore Kumar", "pop": 97 },
-            { "id": "s105", "yt": "LlvoY4v5zm0", "title": "Zindagi Ek Safar Hai Suhana", "hi": "ज़िंदगी एक सफ़र है सुहाना", "film": "Andaz", "year": 1971, "composer": "Shankar-Jaikishan", "singers": "Kishore Kumar", "pop": 97 },
-            { "id": "s106", "yt": "zOZPx0qFCjY", "title": "Chingari Koi Bhadke", "hi": "चिंगारी कोई भड़के", "film": "Amar Prem", "year": 1972, "composer": "R.D. Burman", "singers": "Kishore Kumar", "pop": 95 },
-            { "id": "s107", "yt": "_mK0kQ1vfWs", "title": "Kuch To Log Kahenge", "hi": "कुछ तो लोग कहेंगे", "film": "Amar Prem", "year": 1972, "composer": "R.D. Burman", "singers": "Kishore Kumar", "pop": 95 }
-          ]
-        },
-        {
-          "id": "b1-t2", "class": "tier-2", "meter": 82,
-          "title": "Tier 2 · Classic Melodies", "hi": "क्लासिक मेलोडीज़",
-          "desc": "Beloved melodies that define the era.",
-          "songs": [
-            { "id": "s201", "yt": "aymaeGv3BDc", "embed": false, "title": "Zindagi Ke Safar Mein Guzar Jaate Hain", "hi": "ज़िंदगी के सफ़र में गुज़र जाते हैं", "film": "Aap Ki Kasam", "year": 1974, "composer": "R.D. Burman", "singers": "Kishore Kumar", "pop": 90 },
-            { "id": "s202", "yt": "A6Nh4dE7HNQ", "title": "Yeh Jo Mohabbat Hai", "hi": "ये जो मोहब्बत है", "film": "Kati Patang", "year": 1970, "composer": "R.D. Burman", "singers": "Kishore Kumar", "pop": 84 },
-            { "id": "s203", "yt": "8nWPwVzAj3g", "title": "Diye Jalte Hain", "hi": "दीये जलते हैं", "film": "Namak Haraam", "year": 1973, "composer": "R.D. Burman", "singers": "Kishore Kumar", "pop": 80 },
-            { "id": "s204", "yt": "qzCOQbbAaJw", "title": "Mere Naseeb Mein Ae Dost", "hi": "मेरे नसीब में ऐ दोस्त", "film": "Do Raaste", "year": 1969, "composer": "Laxmikant-Pyarelal", "singers": "Kishore Kumar", "pop": 76 },
-            { "id": "s205", "yt": "5EzLaiNQpRk", "title": "Achha To Hum Chalte Hain", "hi": "अच्छा तो हम चलते हैं", "film": "Aan Milo Sajna", "year": 1970, "composer": "Laxmikant-Pyarelal", "singers": "Kishore Kumar, Lata Mangeshkar", "pop": 85 },
-            { "id": "s206", "yt": "ZbmT0Oyg4X8", "title": "Jai Jai Shiv Shankar", "hi": "जय जय शिव शंकर", "film": "Aap Ki Kasam", "year": 1974, "composer": "R.D. Burman", "singers": "Kishore Kumar, Lata Mangeshkar", "pop": 86 },
-            { "id": "s207", "yt": "9iwPrblnCf8", "embed": false, "title": "Kora Kagaz Tha Yeh Man Mera", "hi": "कोरा काग़ज़ था ये मन मेरा", "film": "Aradhana", "year": 1969, "composer": "S.D. Burman", "singers": "Kishore Kumar, Lata Mangeshkar", "pop": 87 }
-          ]
-        },
-        {
-          "id": "b1-t3", "class": "tier-3", "meter": 58,
-          "title": "Tier 3 · Deep Cuts", "hi": "छुपे हुए रत्न",
-          "desc": "For the true fan — gems beyond the radio hits.",
-          "songs": [
-            { "id": "s301", "yt": "G3WU3qqdX84", "embed": false, "title": "Main Shayar Badnaam", "hi": "मैं शायर बदनाम", "film": "Namak Haraam", "year": 1973, "composer": "R.D. Burman", "singers": "Kishore Kumar", "pop": 66 },
-            { "id": "s302", "yt": "-qMdbL15rvk", "embed": false, "title": "Pyar Deewana Hota Hai", "hi": "प्यार दीवाना होता है", "film": "Kati Patang", "year": 1970, "composer": "R.D. Burman", "singers": "Kishore Kumar", "pop": 70 },
-            { "id": "s303", "yt": "yJuWjV5tlHY", "title": "Woh Shaam Kuch Ajeeb Thi", "hi": "वो शाम कुछ अजीब थी", "film": "Khamoshi", "year": 1969, "composer": "Hemant Kumar", "singers": "Kishore Kumar", "pop": 68 },
-            { "id": "s304", "yt": "BmAoNKeI6ZQ", "title": "Yeh Kya Hua", "hi": "ये क्या हुआ", "film": "Amar Prem", "year": 1972, "composer": "R.D. Burman", "singers": "Kishore Kumar", "pop": 64 },
-            { "id": "s305", "yt": "CcrXejLuQ9M", "title": "Chala Jaata Hoon", "hi": "चला जाता हूँ", "film": "Mere Jeevan Saathi", "year": 1972, "composer": "R.D. Burman", "singers": "Kishore Kumar", "pop": 62 },
-            { "id": "s306", "yt": "uIi36xT_YYo", "title": "Diwana Leke Aaya Hai", "hi": "दीवाना लेके आया है", "film": "Mere Jeevan Saathi", "year": 1972, "composer": "R.D. Burman", "singers": "Kishore Kumar", "pop": 55 },
-            { "id": "s307", "yt": "IsKN8iylATk", "title": "Mere Dil Mein Aaj Kya Hai", "hi": "मेरे दिल में आज क्या है", "film": "Daag", "year": 1973, "composer": "Laxmikant-Pyarelal", "singers": "Kishore Kumar", "pop": 60 }
-          ]
-        }
-      ]
+     "id": "b1-t1",
+     "class": "tier-1",
+     "meter": 98,
+     "title": "Tier 1 · Evergreen Blockbusters",
+     "hi": "सदाबहार ब्लॉकबस्टर",
+     "desc": "The songs every generation knows by heart.",
+     "ids": [
+      "s101",
+      "s102",
+      "s103",
+      "s104",
+      "s105",
+      "s106",
+      "s107"
+     ]
     },
     {
-      "id": "b2",
-      "title": "Composer Vaults",
-      "hi": "संगीतकार तिजोरी",
-      "subtitle": "Kishore's voice through two legendary music houses.",
-      "sections": [
-        {
-          "id": "b2-va", "class": "vol-a",
-          "title": "Volume A · R.D. Burman", "hi": "वॉल्यूम A · आर.डी. बर्मन",
-          "desc": "Pancham's experiments, grooves and timeless ballads.",
-          "songs": [
-            { "id": "s401", "yt": "vHg9WMmSfZ4", "embed": false, "title": "Ek Ajnabee Haseena Se", "hi": "एक अजनबी हसीना से", "film": "Ajnabee", "year": 1974, "composer": "R.D. Burman", "singers": "Kishore Kumar" },
-            { "id": "s402", "yt": "kDPNcxHGkmY", "embed": false, "title": "Musafir Hoon Yaaron", "hi": "मुसाफ़िर हूँ यारों", "film": "Parichay", "year": 1972, "composer": "R.D. Burman", "singers": "Kishore Kumar" },
-            { "id": "s403", "yt": "6pH_ZSV2Wvk", "embed": false, "title": "Meri Bheegi Bheegi Si", "hi": "मेरी भीगी भीगी सी", "film": "Anamika", "year": 1973, "composer": "R.D. Burman", "singers": "Kishore Kumar" },
-            { "id": "s404", "yt": "Lw7RQj6SE4Q", "title": "Aanewala Pal Janewala Hai", "hi": "आनेवाला पल जानेवाला है", "film": "Golmaal", "year": 1979, "composer": "R.D. Burman", "singers": "Kishore Kumar" },
-            { "id": "s405", "yt": "5So8zWTUCM8", "title": "Rimjhim Gire Saawan", "hi": "रिमझिम गिरे सावन", "film": "Manzil", "year": 1979, "composer": "R.D. Burman", "singers": "Kishore Kumar" },
-            { "id": "s406", "yt": "jls21NtYkMk", "title": "Tere Bina Zindagi Se Koi", "hi": "तेरे बिना ज़िंदगी से कोई", "film": "Aandhi", "year": 1975, "composer": "R.D. Burman", "singers": "Kishore Kumar, Lata Mangeshkar" },
-            { "id": "s407", "yt": "XINI9JtypMw", "title": "Mere Saamne Wali Khidki Mein", "hi": "मेरे सामने वाली खिड़की में", "film": "Padosan", "year": 1968, "composer": "R.D. Burman", "singers": "Kishore Kumar" },
-            { "id": "s408", "yt": "3kvlg-kVVgs", "title": "Tum Bin Jaoon Kahan", "hi": "तुम बिन जाऊँ कहाँ", "film": "Pyar Ka Mausam", "year": 1969, "composer": "R.D. Burman", "singers": "Kishore Kumar" }
-          ]
-        },
-        {
-          "id": "b2-vb", "class": "vol-b",
-          "title": "Volume B · Laxmikant-Pyarelal", "hi": "वॉल्यूम B · लक्ष्मीकांत-प्यारेलाल",
-          "desc": "Big orchestras, bigger hooks.",
-          "songs": [
-            { "id": "s501", "yt": "cBqq_3d_tO0", "title": "Om Shanti Om", "hi": "ओम शांति ओम", "film": "Karz", "year": 1980, "composer": "Laxmikant-Pyarelal", "singers": "Kishore Kumar" },
-            { "id": "s502", "yt": "ORlfGLKTkUs", "title": "My Name Is Anthony Gonsalves", "hi": "माई नेम इज़ एंथनी गोंज़ाल्विस", "film": "Amar Akbar Anthony", "year": 1977, "composer": "Laxmikant-Pyarelal", "singers": "Kishore Kumar" },
-            { "id": "s503", "yt": "X3jxoY289M8", "title": "Aate Jaate Khoobsurat Awara Sadkon Pe", "hi": "आते जाते ख़ूबसूरत आवारा सड़कों पे", "film": "Anurodh", "year": 1977, "composer": "Laxmikant-Pyarelal", "singers": "Kishore Kumar" },
-            { "id": "s504", "yt": "hsfcCJ034Fk", "title": "Aap Ke Anurodh Pe", "hi": "आप के अनुरोध पे", "film": "Anurodh", "year": 1977, "composer": "Laxmikant-Pyarelal", "singers": "Kishore Kumar" },
-            { "id": "s505", "yt": "_1MYc_9ylE8", "embed": false, "title": "Chal Chal Chal Mere Haathi", "hi": "चल चल चल मेरे हाथी", "film": "Haathi Mere Saathi", "year": 1971, "composer": "Laxmikant-Pyarelal", "singers": "Kishore Kumar" },
-            { "id": "s506", "yt": "pPAY45ttDW8", "title": "Mere Mehboob Qayamat Hogi", "hi": "मेरे महबूब क़यामत होगी", "film": "Mr. X in Bombay", "year": 1964, "composer": "Laxmikant-Pyarelal", "singers": "Kishore Kumar" },
-            { "id": "s507", "yt": "ofVVR2OWO0g", "title": "Gaadi Bula Rahi Hai", "hi": "गाड़ी बुला रही है", "film": "Dost", "year": 1974, "composer": "Laxmikant-Pyarelal", "singers": "Kishore Kumar" }
-          ]
-        }
-      ]
+     "id": "b1-t2",
+     "class": "tier-2",
+     "meter": 82,
+     "title": "Tier 2 · Classic Melodies",
+     "hi": "क्लासिक मेलोडीज़",
+     "desc": "Beloved melodies that define the era.",
+     "ids": [
+      "s201",
+      "s202",
+      "s203",
+      "s204",
+      "s205",
+      "s206",
+      "s207"
+     ]
     },
     {
-      "id": "b3",
-      "title": "Kishore & Asha Duets",
-      "hi": "किशोर और आशा के युगल गीत",
-      "subtitle": "Two of the most versatile voices of Hindi cinema, together.",
-      "sections": [
-        {
-          "id": "b3-p", "class": "mood-playful",
-          "title": "Playful / Quirky", "hi": "चुलबुले / मस्ती भरे",
-          "desc": "Banter, giggles and pure fun.",
-          "songs": [
-            { "id": "s601", "yt": "bnYyvOknqYo", "title": "Ek Main Aur Ek Tu", "hi": "एक मैं और एक तू", "film": "Khel Khel Mein", "year": 1975, "composer": "R.D. Burman", "singers": "Kishore Kumar, Asha Bhosle" },
-            { "id": "s602", "yt": "V3tB5Wu2ifg", "title": "Jaane Jaan Dhoondta Phir Raha", "hi": "जाने जाँ ढूँढता फिर रहा", "film": "Jawani Diwani", "year": 1972, "composer": "R.D. Burman", "singers": "Kishore Kumar, Asha Bhosle" },
-            { "id": "s603", "yt": "yobWSB9Xl38", "title": "Haal Kaisa Hai Janab Ka", "hi": "हाल कैसा है जनाब का", "film": "Chalti Ka Naam Gaadi", "year": 1958, "composer": "S.D. Burman", "singers": "Kishore Kumar, Asha Bhosle" },
-            { "id": "s604", "yt": "QUyFoyHT8s8", "title": "Chhod Do Aanchal Zamana Kya Kahega", "hi": "छोड़ दो आँचल ज़माना क्या कहेगा", "film": "Paying Guest", "year": 1957, "composer": "S.D. Burman", "singers": "Kishore Kumar, Asha Bhosle" },
-            { "id": "s605", "yt": "F4-MjRwZteQ", "title": "Ek Haseena Thi", "hi": "एक हसीना थी", "film": "Karz", "year": 1980, "composer": "Laxmikant-Pyarelal", "singers": "Kishore Kumar, Asha Bhosle" },
-            { "id": "s606", "yt": "5SiHK1LVHjU", "title": "Hawa Ke Saath Saath", "hi": "हवा के साथ साथ", "film": "Seeta Aur Geeta", "year": 1972, "composer": "R.D. Burman", "singers": "Kishore Kumar, Asha Bhosle" },
-            { "id": "s607", "yt": "Tforerprg3o", "title": "Aaj Rapat Jaayen", "hi": "आज रपट जाएँ", "film": "Namak Halaal", "year": 1982, "composer": "Bappi Lahiri", "singers": "Kishore Kumar, Asha Bhosle" }
-          ]
-        },
-        {
-          "id": "b3-r", "class": "mood-romantic",
-          "title": "Sensual / Romantic", "hi": "रोमांटिक",
-          "desc": "Slow, warm and full of longing.",
-          "songs": [
-            { "id": "s701", "yt": "zMGYCKr5trw", "title": "Yeh Raatein Yeh Mausam", "hi": "ये रातें ये मौसम", "film": "Dilli Ka Thug", "year": 1958, "composer": "Ravi", "singers": "Kishore Kumar, Asha Bhosle" },
-            { "id": "s702", "yt": "kYcSXvQyceE", "title": "Aankhon Mein Kya Ji", "hi": "आँखों में क्या जी", "film": "Nau Do Gyarah", "year": 1957, "composer": "S.D. Burman", "singers": "Kishore Kumar, Asha Bhosle" },
-            { "id": "s703", "yt": "0QlQo5erDJE", "title": "Kehdoon Tumhe", "hi": "कह दूँ तुम्हें", "film": "Deewaar", "year": 1975, "composer": "R.D. Burman", "singers": "Kishore Kumar, Asha Bhosle" },
-            { "id": "s705", "yt": "bkVpqTrFmEA", "title": "Tum Saath Ho Jab Apne", "hi": "तुम साथ हो जब अपने", "film": "Kaalia", "year": 1981, "composer": "R.D. Burman", "singers": "Kishore Kumar, Asha Bhosle" },
-            { "id": "s706", "yt": "e4ScxnmzTXQ", "title": "Sapna Mera Toot Gaya", "hi": "सपना मेरा टूट गया", "film": "Khel Khel Mein", "year": 1975, "composer": "R.D. Burman", "singers": "Kishore Kumar, Asha Bhosle" }
-          ]
-        }
-      ]
+     "id": "b1-t3",
+     "class": "tier-3",
+     "meter": 58,
+     "title": "Tier 3 · Deep Cuts",
+     "hi": "छुपे हुए रत्न",
+     "desc": "For the true fan — gems beyond the radio hits.",
+     "ids": [
+      "s301",
+      "s302",
+      "s303",
+      "s304",
+      "s305",
+      "s306",
+      "s307"
+     ]
     }
-  ],
-  "trivia": [
-    { "en": "Kishore Kumar was born Abhas Kumar Ganguly on 4 August 1929 in Khandwa, Madhya Pradesh.", "hi": "किशोर कुमार का असली नाम आभास कुमार गांगुली था। उनका जन्म 4 अगस्त 1929 को खंडवा (मध्य प्रदेश) में हुआ।" },
-    { "en": "He won the Filmfare Best Male Playback Singer award 8 times — a record in that category.", "hi": "उन्होंने 8 बार फ़िल्मफ़ेयर सर्वश्रेष्ठ पार्श्व गायक का पुरस्कार जीता — इस श्रेणी में एक रिकॉर्ड।" },
-    { "en": "His first Filmfare award came for \"Roop Tera Mastana\" from Aradhana (1969).", "hi": "उनका पहला फ़िल्मफ़ेयर पुरस्कार आराधना (1969) के गीत \"रूप तेरा मस्ताना\" के लिए मिला।" },
-    { "en": "Aradhana (1969) turned Rajesh Khanna into a superstar and made Kishore his signature voice.", "hi": "आराधना (1969) ने राजेश खन्ना को सुपरस्टार बनाया और किशोर उनकी पहचान वाली आवाज़ बन गए।" },
-    { "en": "\"Mere Sapnon Ki Rani\" was filmed alongside the Darjeeling toy train, with Rajesh Khanna in an open jeep.", "hi": "\"मेरे सपनों की रानी\" दार्जिलिंग की टॉय ट्रेन के साथ फ़िल्माया गया, राजेश खन्ना खुली जीप में थे।" },
-    { "en": "Kishore's famous yodelling was inspired by recordings of Jimmie Rodgers and Tex Morton.", "hi": "किशोर की मशहूर योडलिंग जिमी रॉजर्स और टेक्स मॉर्टन की रिकॉर्डिंग से प्रेरित थी।" },
-    { "en": "Chalti Ka Naam Gaadi (1958) starred all three Ganguly brothers — Ashok, Anoop and Kishore.", "hi": "चलती का नाम गाड़ी (1958) में तीनों गांगुली भाई — अशोक, अनूप और किशोर — एक साथ थे।" },
-    { "en": "Kishore was also a director and composer — he made Door Gagan Ki Chhaon Mein (1964).", "hi": "किशोर निर्देशक और संगीतकार भी थे — उन्होंने 'दूर गगन की छाँव में' (1964) बनाई।" },
-    { "en": "R.D. Burman ('Pancham') was the son of S.D. Burman — both composed many Kishore classics.", "hi": "आर.डी. बर्मन ('पंचम') एस.डी. बर्मन के बेटे थे — दोनों ने किशोर के कई क्लासिक गीत रचे।" },
-    { "en": "\"O Mere Dil Ke Chain\" was written by Majrooh Sultanpuri; \"Zindagi Ke Safar Mein\" by Anand Bakshi.", "hi": "\"ओ मेरे दिल के चैन\" मजरूह सुल्तानपुरी ने लिखा; \"ज़िंदगी के सफ़र में\" आनंद बख्शी ने।" },
-    { "en": "During the Emergency (1976), All India Radio stopped playing Kishore's songs for a period.", "hi": "आपातकाल (1976) के दौरान ऑल इंडिया रेडियो ने कुछ समय तक किशोर के गाने बजाना बंद कर दिया था।" },
-    { "en": "Kishore Kumar passed away on 13 October 1987 in Bombay; he was cremated in Khandwa as he wished.", "hi": "किशोर कुमार का निधन 13 अक्टूबर 1987 को बंबई में हुआ; उनकी इच्छा के अनुसार खंडवा में अंतिम संस्कार हुआ।" }
-  ]
+   ]
+  },
+  {
+   "id": "b2",
+   "title": "Composer Vaults",
+   "hi": "संगीतकार तिजोरी",
+   "subtitle": "Kishore's voice through two legendary music houses.",
+   "sections": [
+    {
+     "id": "b2-va",
+     "class": "vol-a",
+     "title": "Volume A · R.D. Burman",
+     "hi": "वॉल्यूम A · आर.डी. बर्मन",
+     "desc": "Pancham's experiments, grooves and timeless ballads.",
+     "ids": [
+      "s401",
+      "s402",
+      "s403",
+      "s404",
+      "s405",
+      "s406",
+      "s407",
+      "s408"
+     ]
+    },
+    {
+     "id": "b2-vb",
+     "class": "vol-b",
+     "title": "Volume B · Laxmikant-Pyarelal",
+     "hi": "वॉल्यूम B · लक्ष्मीकांत-प्यारेलाल",
+     "desc": "Big orchestras, bigger hooks.",
+     "ids": [
+      "s501",
+      "s502",
+      "s503",
+      "s504",
+      "s505",
+      "s506",
+      "s507"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b3",
+   "title": "Kishore & Asha Duets",
+   "hi": "किशोर और आशा के युगल गीत",
+   "subtitle": "Two of the most versatile voices of Hindi cinema, together.",
+   "sections": [
+    {
+     "id": "b3-p",
+     "class": "mood-playful",
+     "title": "Playful / Quirky",
+     "hi": "चुलबुले / मस्ती भरे",
+     "desc": "Banter, giggles and pure fun.",
+     "ids": [
+      "s601",
+      "s602",
+      "s603",
+      "s604",
+      "s605",
+      "s606",
+      "s607"
+     ]
+    },
+    {
+     "id": "b3-r",
+     "class": "mood-romantic",
+     "title": "Sensual / Romantic",
+     "hi": "रोमांटिक",
+     "desc": "Slow, warm and full of longing.",
+     "ids": [
+      "s701",
+      "s702",
+      "s703",
+      "s705",
+      "s706"
+     ]
+    }
+   ]
+  }
+ ],
+ "trivia": [
+  {
+   "en": "Kishore Kumar was born Abhas Kumar Ganguly on 4 August 1929 in Khandwa, Madhya Pradesh.",
+   "hi": "किशोर कुमार का असली नाम आभास कुमार गांगुली था। उनका जन्म 4 अगस्त 1929 को खंडवा (मध्य प्रदेश) में हुआ।"
+  },
+  {
+   "en": "He won the Filmfare Best Male Playback Singer award 8 times — a record in that category.",
+   "hi": "उन्होंने 8 बार फ़िल्मफ़ेयर सर्वश्रेष्ठ पार्श्व गायक का पुरस्कार जीता — इस श्रेणी में एक रिकॉर्ड।"
+  },
+  {
+   "en": "His first Filmfare award came for \"Roop Tera Mastana\" from Aradhana (1969).",
+   "hi": "उनका पहला फ़िल्मफ़ेयर पुरस्कार आराधना (1969) के गीत \"रूप तेरा मस्ताना\" के लिए मिला।"
+  },
+  {
+   "en": "Aradhana (1969) turned Rajesh Khanna into a superstar and made Kishore his signature voice.",
+   "hi": "आराधना (1969) ने राजेश खन्ना को सुपरस्टार बनाया और किशोर उनकी पहचान वाली आवाज़ बन गए।"
+  },
+  {
+   "en": "\"Mere Sapnon Ki Rani\" was filmed alongside the Darjeeling toy train, with Rajesh Khanna in an open jeep.",
+   "hi": "\"मेरे सपनों की रानी\" दार्जिलिंग की टॉय ट्रेन के साथ फ़िल्माया गया, राजेश खन्ना खुली जीप में थे।"
+  },
+  {
+   "en": "Kishore's famous yodelling was inspired by recordings of Jimmie Rodgers and Tex Morton.",
+   "hi": "किशोर की मशहूर योडलिंग जिमी रॉजर्स और टेक्स मॉर्टन की रिकॉर्डिंग से प्रेरित थी।"
+  },
+  {
+   "en": "Chalti Ka Naam Gaadi (1958) starred all three Ganguly brothers — Ashok, Anoop and Kishore.",
+   "hi": "चलती का नाम गाड़ी (1958) में तीनों गांगुली भाई — अशोक, अनूप और किशोर — एक साथ थे।"
+  },
+  {
+   "en": "Kishore was also a director and composer — he made Door Gagan Ki Chhaon Mein (1964).",
+   "hi": "किशोर निर्देशक और संगीतकार भी थे — उन्होंने 'दूर गगन की छाँव में' (1964) बनाई।"
+  },
+  {
+   "en": "R.D. Burman ('Pancham') was the son of S.D. Burman — both composed many Kishore classics.",
+   "hi": "आर.डी. बर्मन ('पंचम') एस.डी. बर्मन के बेटे थे — दोनों ने किशोर के कई क्लासिक गीत रचे।"
+  },
+  {
+   "en": "\"O Mere Dil Ke Chain\" was written by Majrooh Sultanpuri; \"Zindagi Ke Safar Mein\" by Anand Bakshi.",
+   "hi": "\"ओ मेरे दिल के चैन\" मजरूह सुल्तानपुरी ने लिखा; \"ज़िंदगी के सफ़र में\" आनंद बख्शी ने।"
+  },
+  {
+   "en": "During the Emergency (1976), All India Radio stopped playing Kishore's songs for a period.",
+   "hi": "आपातकाल (1976) के दौरान ऑल इंडिया रेडियो ने कुछ समय तक किशोर के गाने बजाना बंद कर दिया था।"
+  },
+  {
+   "en": "Kishore Kumar passed away on 13 October 1987 in Bombay; he was cremated in Khandwa as he wished.",
+   "hi": "किशोर कुमार का निधन 13 अक्टूबर 1987 को बंबई में हुआ; उनकी इच्छा के अनुसार खंडवा में अंतिम संस्कार हुआ।"
+  }
+ ]
 }
