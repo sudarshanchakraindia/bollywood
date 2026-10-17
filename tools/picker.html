@@ -20,6 +20,10 @@
   .help { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px 14px; font-size:.92rem; }
   .song { margin:18px 0; padding:12px; background:#24150d; border:1px solid var(--line); border-radius:14px; }
   .song.done { border-color:var(--green); }
+  .info { margin:4px 0 0; font-size:.82rem; color:var(--muted); }
+  .rej { margin:6px 0 0; color:#ff9a8a; font-size:.85rem; }
+  button.reject { margin-top:6px; font-size:.8rem; border-color:#7a2a2a; }
+  .song:has(.rej) .cands { opacity:.35; }
   .song h2 { margin:0; font-size:1rem; }
   .song h2 small { color:var(--muted); font-weight:400; }
   .cands { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:10px; margin-top:10px; }
@@ -57,7 +61,8 @@
 </header>
 <main>
   <div class="help">
-    हर गाने के नीचे कुछ videos हैं। <b>तस्वीर पर click</b> करके video देख सकते हैं।
+    पहले गाने की जानकारी (गायक, संगीतकार, अभिनेता) देखें — कुछ गलत हो तो <b>"❌ गाना / जानकारी गलत है"</b> दबाएँ।
+    सही हो तो नीचे के videos में से चुनें। <b>तस्वीर पर click</b> करके video देख सकते हैं।
     जो <b>असली फ़िल्म वाला</b> हो, उसके नीचे <b>"✔ यही सही है"</b> दबाएँ।
     आपकी पसंद अपने-आप इसी browser में save होती जाती है — बीच में बंद करके बाद में भी आ सकते हैं।
     <br><span class="tag cur">अभी app में</span> = जो video अभी चल रहा है · <span class="tag bad">embed बंद</span> = app में नहीं चलेगा
@@ -121,6 +126,9 @@
       .map((s) => `
         <section class="song ${picks[s.id] ? 'done' : ''}" id="sec-${esc(s.id)}">
           <h2>${esc(s.title)} <small>· ${esc(s.hi)} · ${esc(s.film)} (${esc(s.year)})</small></h2>
+          <p class="info">🎤 ${esc([].concat(s.singers).join(', '))} · 🎼 ${esc(s.composer)}${s.actors ? ' · ⭐ ' + esc(s.actors.join(', ')) : ''}</p>
+          ${picks[s.id] === 'REJECT' ? '<p class="rej">❌ आपने यह गाना गलत बताया है — यह app में नहीं जाएगा।</p>' : ''}
+          <button class="reject" data-pick="${esc(s.id)}|REJECT">${picks[s.id] === 'REJECT' ? '❌ गलत चिह्नित' : '❌ गाना / जानकारी गलत है'}</button>
           <div class="cands">
             ${cand[s.id].map((v) => `
               <div class="cand ${picks[s.id] === v.id ? 'sel' : ''} ${v.e === 0 ? 'noembed' : ''}">
@@ -174,7 +182,9 @@
   fetch('../songs.json', { cache: 'no-cache' })
     .then((r) => r.json())
     .then((d) => {
-      songs = d.bundles.flatMap((b) => b.sections.flatMap((sec) => sec.songs));
+      const all = d.songs || d.bundles.flatMap((b) => b.sections.flatMap((sec) => sec.songs));
+      // By default only NEW songs (status "review"); add ?all=1 to see every song
+      songs = new URLSearchParams(location.search).get('all') ? all : all.filter((s) => s.status === 'review');
       render();
     })
     .catch(() => { $('list').innerHTML = '<p class="empty">songs.json load नहीं हुआ।</p>'; });
