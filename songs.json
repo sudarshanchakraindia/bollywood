@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "bundles": [
     {
       "id": "b1",
@@ -83,7 +83,7 @@
             { "id": "s504", "title": "Aap Ke Anurodh Pe", "hi": "आप के अनुरोध पे", "film": "Anurodh", "year": 1977, "composer": "Laxmikant-Pyarelal", "singers": "Kishore Kumar" },
             { "id": "s505", "title": "Chal Chal Chal Mere Haathi", "hi": "चल चल चल मेरे हाथी", "film": "Haathi Mere Saathi", "year": 1971, "composer": "Laxmikant-Pyarelal", "singers": "Kishore Kumar" },
             { "id": "s506", "title": "Mere Mehboob Qayamat Hogi", "hi": "मेरे महबूब क़यामत होगी", "film": "Mr. X in Bombay", "year": 1964, "composer": "Laxmikant-Pyarelal", "singers": "Kishore Kumar" },
-            { "id": "s507", "title": "Hum Tum Ek Kamre Mein Band Ho", "hi": "हम तुम एक कमरे में बंद हों", "film": "Bobby", "year": 1973, "composer": "Laxmikant-Pyarelal", "singers": "Kishore Kumar, Lata Mangeshkar" }
+            { "id": "s507", "title": "Gaadi Bula Rahi Hai", "hi": "गाड़ी बुला रही है", "film": "Dost", "year": 1974, "composer": "Laxmikant-Pyarelal", "singers": "Kishore Kumar" }
           ]
         }
       ]
