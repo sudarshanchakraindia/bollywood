@@ -278,6 +278,19 @@ body.has-player { padding-bottom: 360px; }
 .yt-link:hover { color: var(--gold); }
 @media (max-width: 420px) { .pc-btn { width: 34px; height: 34px; } }
 
+/* Mode toggle + Play-all */
+.mode-btn {
+  margin-top: 4px; padding: 3px 10px; font-size: .75rem; font-weight: 700;
+  background: var(--card-2); color: var(--gold-2); border: 1px solid var(--gold); border-radius: 999px;
+}
+.mode-btn[aria-pressed="false"] { color: var(--muted); border-color: var(--line); }
+.play-all { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+.play-all button {
+  border: 1px solid var(--gold); background: transparent; color: var(--gold);
+  border-radius: 999px; padding: 6px 14px; font-weight: 700; font-size: .85rem;
+}
+.play-all button:first-child { background: var(--gold); color: #2a1608; }
+
 /* ---------- Footer & toast ---------- */
 .app-footer { max-width: 980px; margin: 0 auto; padding: 18px 16px 28px; text-align: center; color: #9c8268; font-size: 0.75rem; }
 .app-footer p { margin: 4px 0; }

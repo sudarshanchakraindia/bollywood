@@ -258,6 +258,12 @@
       </li>`;
   }
 
+  const playAllBtns = () => `
+    <div class="play-all">
+      <button data-playall="continuous">🔁 सब लगातार चलाएँ</button>
+      <button data-playall="shuffle">🔀 Shuffle</button>
+    </div>`;
+
   function renderTabs() {
     const tabs = [...state.data.bundles.map((b) => ({ id: b.id, title: b.title, hi: b.hi })),
       { id: 'favs', title: '♥ Favourites', hi: `पसंदीदा (${state.favs.size})` }];
@@ -271,6 +277,7 @@
     const isTiered = b.id === 'b1';
     return `
       <div class="bundle-head">
+        ${playAllBtns()}
         <h2>${esc(b.title)} <span lang="hi" style="font-weight:400;color:var(--muted);font-size:.9rem">· ${esc(b.hi)}</span></h2>
         <p>${esc(b.subtitle)}</p>
       </div>
@@ -295,7 +302,7 @@
   function renderFavs() {
     const list = state.songs.filter((s) => state.favs.has(s.id));
     if (!list.length) return `<p class="empty">No favourites yet. Tap ♡ on any song. <br><span lang="hi">अभी कोई पसंदीदा गाना नहीं है।</span></p>`;
-    return `<div class="bundle-head"><h2>♥ Your Favourites</h2><p>${list.length} songs</p></div>
+    return `<div class="bundle-head">${playAllBtns()}<h2>♥ Your Favourites</h2><p>${list.length} songs</p></div>
       <ul class="song-grid">${list.map((s) => songCard(s, { showBundle: true })).join('')}</ul>`;
   }
 
@@ -305,7 +312,7 @@
       return `<p class="empty">No match for "<b>${esc(state.query)}</b>".<br>
         <span lang="hi">कोई गाना नहीं मिला — दूसरी स्पेलिंग या फ़िल्म का नाम आज़माएँ।</span></p>`;
     }
-    return `<div class="bundle-head"><h2>🔍 ${results.length} result${results.length > 1 ? 's' : ''}</h2>
+    return `<div class="bundle-head">${playAllBtns()}<h2>🔍 ${results.length} result${results.length > 1 ? 's' : ''}</h2>
       <p>for "${esc(state.query)}"</p></div>
       <ul class="song-grid">${results.map((r) => songCard(r.s, { showBundle: true, showMeter: !!r.s.pop })).join('')}</ul>`;
   }
@@ -480,10 +487,22 @@
   const Player = (() => {
     const p = {
       box: $('player'), title: $('npTitle'), sub: $('npSub'), err: $('npError'),
-      prev: $('npPrev'), next: $('npNext'), toggle: $('npToggle'), close: $('npClose')
+      prev: $('npPrev'), next: $('npNext'), toggle: $('npToggle'), close: $('npClose'), mode: $('npMode')
     };
     let yt = null, ready = false, apiLoading = null;
     let current = null, queue = [], pendingId = null;
+    // 'continuous' = play only OUR list, one after another · 'single' = stop after this song
+    let mode = store.get('kk.mode', 'continuous');
+    let endedFor = null;        // song id whose end we've already handled
+    let switchingUntil = 0;     // ignore guard checks while a new video is loading
+
+    function updateModeBtn() {
+      const single = mode === 'single';
+      p.mode.textContent = single ? '🔂 एक गाना (Single)' : '🔁 लगातार (Continuous)';
+      p.mode.setAttribute('aria-pressed', String(!single));
+      p.mode.title = single ? 'Stops after this song — tap for Continuous' : 'Plays your list one after another — tap for Single';
+    }
+    function setMode(m) { mode = m; store.set('kk.mode', m); updateModeBtn(); }
 
     function loadApi() {
       if (window.YT && window.YT.Player) return Promise.resolve();
@@ -529,8 +548,38 @@
       const S = window.YT.PlayerState;
       if (e.data === S.PLAYING) { p.toggle.textContent = '⏸'; p.toggle.setAttribute('aria-label', 'Pause'); }
       if (e.data === S.PAUSED) { p.toggle.textContent = '▶'; p.toggle.setAttribute('aria-label', 'Play'); }
-      if (e.data === S.ENDED) step(1); // auto-play next song in the list
+      if (e.data === S.ENDED) handleEnd();
     }
+
+    /** Our song finished → Single: stop. Continuous: next song from OUR list (never YouTube's). */
+    function handleEnd() {
+      if (!current || endedFor === current) return;
+      endedFor = current;
+      if (mode === 'single') {
+        const song = songById(current);
+        if (song) yt.cueVideoById(song.yt);   // park on our own video, kills YouTube's end-screen / up-next
+        p.toggle.textContent = '▶'; p.toggle.setAttribute('aria-label', 'Play');
+      } else {
+        step(1);
+      }
+    }
+
+    /** Guard: YouTube must never play its own "next" video inside our player. */
+    function guard() {
+      if (!yt || !ready || !current || Date.now() < switchingUntil) return;
+      const song = songById(current);
+      if (!song) return;
+      let vid = '', st = -1, d = 0, t = 0;
+      try { vid = (yt.getVideoData() || {}).video_id || ''; st = yt.getPlayerState(); d = yt.getDuration(); t = yt.getCurrentTime(); } catch { return; }
+      if (vid && vid !== song.yt) {               // YouTube switched to a video that is not ours
+        if (mode === 'single') { switchingUntil = Date.now() + 3000; yt.cueVideoById(song.yt); endedFor = current; }
+        else handleEnd();
+        return;
+      }
+      // Finish a moment before the real end, so YouTube's autoplay countdown never starts
+      if (st === window.YT.PlayerState.PLAYING && d > 60 && t >= d - 0.7) handleEnd();
+    }
+    setInterval(guard, 500);
 
     async function play(id, newQueue) {
       const song = songById(id);
@@ -538,6 +587,8 @@
       if (!navigator.onLine) { toast('Songs need internet. गाना सुनने के लिए इंटरनेट चाहिए।'); return; }
       if (newQueue && newQueue.length) queue = newQueue;
       current = id;
+      endedFor = null;
+      switchingUntil = Date.now() + 4000;
       p.box.hidden = false;
       document.body.classList.add('has-player');
       showInfo(song);
@@ -553,7 +604,7 @@
         yt = new window.YT.Player('ytFrame', {
           host: 'https://www.youtube-nocookie.com',
           videoId: song.yt,
-          playerVars: { autoplay: 1, playsinline: 1, rel: 0, modestbranding: 1 },
+          playerVars: { autoplay: 1, playsinline: 1, rel: 0, modestbranding: 1, iv_load_policy: 3 },
           events: {
             onReady: (e) => { ready = true; e.target.playVideo(); if (pendingId !== song.yt) e.target.loadVideoById(pendingId); },
             onStateChange: onState,
@@ -586,13 +637,18 @@
     p.prev.addEventListener('click', () => step(-1));
     p.next.addEventListener('click', () => step(1));
     p.close.addEventListener('click', closePlayer);
+    p.mode.addEventListener('click', () => {
+      setMode(mode === 'single' ? 'continuous' : 'single');
+      toast(mode === 'single' ? '🔂 Single: यह गाना खत्म होकर रुक जाएगा' : '🔁 Continuous: आपकी list के गाने एक के बाद एक चलेंगे');
+    });
+    updateModeBtn();
     p.toggle.addEventListener('click', () => {
       if (!yt || !ready) return;
       const S = window.YT.PlayerState;
       yt.getPlayerState() === S.PLAYING ? yt.pauseVideo() : yt.playVideo();
     });
 
-    return { play, isCurrent: (id) => current === id };
+    return { play, setMode, isCurrent: (id) => current === id };
   })();
 
   // =========================================================
@@ -641,6 +697,15 @@
     els.view.addEventListener('click', (e) => {
       const f = e.target.closest('[data-fav]');
       if (f) toggleFav(f.dataset.fav);
+      const pa = e.target.closest('[data-playall]');
+      if (pa) {
+        let queue = [...els.view.querySelectorAll('[data-play]')].map((b) => b.dataset.play);
+        if (!queue.length) { toast('इस list में app के अंदर चलने वाला कोई गाना नहीं है'); return; }
+        if (pa.dataset.playall === 'shuffle') queue = queue.map((v) => [Math.random(), v]).sort((a, b) => a[0] - b[0]).map((x) => x[1]);
+        Player.setMode('continuous');
+        Player.play(queue[0], queue);
+        return;
+      }
       const p = e.target.closest('[data-play]');
       if (p) {
         // Queue = the songs currently shown on screen, in order
