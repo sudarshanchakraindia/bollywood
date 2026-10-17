@@ -5,7 +5,7 @@
    Bump CACHE_VERSION whenever you change any shell file.
    ========================================================= */
 
-const CACHE_VERSION = 'v1.1.0';
+const CACHE_VERSION = 'v1.1.1';
 const SHELL_CACHE = `kk-shell-${CACHE_VERSION}`;
 const DATA_CACHE = `kk-data-${CACHE_VERSION}`;
 
@@ -25,8 +25,9 @@ const DATA_FILES = ['./songs.json'];
 self.addEventListener('install', (event) => {
   event.waitUntil(
     Promise.all([
-      caches.open(SHELL_CACHE).then((c) => c.addAll(SHELL_FILES)),
-      caches.open(DATA_CACHE).then((c) => c.addAll(DATA_FILES))
+      // cache: 'reload' bypasses the browser HTTP cache so a new version never stores stale files
+      caches.open(SHELL_CACHE).then((c) => c.addAll(SHELL_FILES.map((u) => new Request(u, { cache: 'reload' })))),
+      caches.open(DATA_CACHE).then((c) => c.addAll(DATA_FILES.map((u) => new Request(u, { cache: 'reload' }))))
     ]).then(() => self.skipWaiting())
   );
 });
@@ -61,7 +62,7 @@ self.addEventListener('fetch', (event) => {
   // Page navigations: serve cached index.html when offline
   if (req.mode === 'navigate') {
     event.respondWith(
-      fetch(req)
+      fetch(req, { cache: 'no-cache' })
         .then((res) => {
           const copy = res.clone();
           caches.open(SHELL_CACHE).then((c) => c.put('./index.html', copy));
@@ -90,7 +91,7 @@ self.addEventListener('fetch', (event) => {
 async function staleWhileRevalidate(req) {
   const cache = await caches.open(DATA_CACHE);
   const cached = await cache.match(req, { ignoreSearch: true });
-  const network = fetch(req)
+  const network = fetch(req, { cache: 'no-cache' })
     .then((res) => {
       if (res && res.ok) cache.put(req, res.clone());
       return res;
