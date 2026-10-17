@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Kishore Kumar Ultimate Fan Jukebox</title>
+  <meta name="description" content="A fan-made jukebox of Kishore Kumar classics — Rajesh Khanna combos, R.D. Burman & Laxmikant-Pyarelal vaults, and Asha Bhosle duets." />
+  <meta name="theme-color" content="#1a0f0a" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Kishore Jukebox" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to songs</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="app-header">
+    <div class="brand">
+      <div class="vinyl" aria-hidden="true"><span></span></div>
+      <div>
+        <h1>Kishore Kumar <span>Ultimate Fan Jukebox</span></h1>
+        <p class="tagline" lang="hi">किशोर कुमार — सदाबहार आवाज़</p>
+      </div>
+    </div>
+    <button id="installBtn" class="install-btn" hidden>⬇ Install App</button>
+  </header>
+
+  <!-- ============ SEARCH ============ -->
+  <section class="search-wrap" aria-label="Search songs">
+    <form id="searchForm" class="search-bar" role="search" autocomplete="off">
+      <span class="search-icon" aria-hidden="true">🔍</span>
+      <input
+        id="searchInput"
+        type="search"
+        placeholder="Search: O Mere Dil Ke Chain / ओ मेरे दिल के चैन"
+        aria-label="Search songs in English or Hindi"
+        enterkeyhint="search"
+      />
+      <button type="button" id="clearBtn" class="icon-btn" aria-label="Clear search" hidden>✕</button>
+      <button type="button" id="langBtn" class="lang-btn" aria-label="Voice language: Hindi" title="Voice language (tap to switch)">हि</button>
+      <button type="button" id="micBtn" class="mic-btn" aria-label="Start voice search" title="Voice search">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <path fill="currentColor" d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2Z"/>
+        </svg>
+        <span class="mic-ring" aria-hidden="true"></span>
+      </button>
+    </form>
+    <p class="search-hint">Search by song, film, composer or year — English or हिंदी · 🎤 tap the mic and speak</p>
+    <div id="voicePanel" class="voice-panel" hidden aria-live="polite">
+      <div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+      <p id="voiceText" class="voice-text">Listening… बोलिए / speak now</p>
+    </div>
+  </section>
+
+  <!-- ============ BUNDLE TABS ============ -->
+  <nav class="tabs" role="tablist" aria-label="Bundles" id="tabs"></nav>
+
+  <!-- ============ MAIN ============ -->
+  <main id="main" class="content" tabindex="-1">
+    <div id="view" aria-live="polite">
+      <p class="loading">Loading the jukebox… 🎶</p>
+    </div>
+  </main>
+
+  <!-- ============ TRIVIA ============ -->
+  <section class="trivia" aria-labelledby="triviaTitle">
+    <div class="trivia-head">
+      <h2 id="triviaTitle">🎙 Musical Trivia of the Day</h2>
+      <button id="nextTrivia" class="ghost-btn" aria-label="Show another trivia">Next ↻</button>
+    </div>
+    <p id="triviaText" class="trivia-text"></p>
+    <p id="triviaTextHi" class="trivia-text hi" lang="hi"></p>
+  </section>
+
+  <footer class="app-footer">
+    <p>A non-commercial fan tribute. "Listen" opens a YouTube search — no audio is hosted here.</p>
+    <p id="netStatus" class="net-status"></p>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
