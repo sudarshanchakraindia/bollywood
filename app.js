@@ -234,9 +234,14 @@
     const q = state.query;
     return `
       <li class="song${Player.isCurrent(s.id) ? ' playing' : ''}" id="song-${esc(s.id)}">
-        <p class="song-title">${highlight(s.title, q)}</p>
-        <p class="song-hi" lang="hi">${highlight(s.hi, q)}</p>
-        <p class="song-meta">🎬 ${esc(s.film)} (${esc(s.year)}) · 🎼 ${esc(s.composer)}</p>
+        <div class="song-top">
+          <div class="song-text">
+            <p class="song-title">${highlight(s.title, q)}</p>
+            <p class="song-hi" lang="hi">${highlight(s.hi, q)}</p>
+            <p class="song-meta">🎬 ${esc(s.film)} (${esc(s.year)}) · 🎼 ${esc(s.composer)}</p>
+          </div>
+          ${thumbHtml(s)}
+        </div>
         <div class="chips">
           <span class="chip">🎤 ${esc(s.singers)}</span>
           ${showBundle ? `<span class="chip">${esc(s.bundleTitle)}</span>` : ''}
@@ -256,6 +261,15 @@
           <button class="fav-btn" data-fav="${esc(s.id)}" aria-pressed="${fav}" aria-label="${fav ? 'Remove from' : 'Add to'} favourites">${fav ? '♥' : '♡'}</button>
         </div>
       </li>`;
+  }
+
+  /** Picture of the song = thumbnail of its chosen YouTube video. Tapping it plays the song. */
+  function thumbHtml(s) {
+    if (!s.yt) return '';
+    const img = `<img src="https://i.ytimg.com/vi/${esc(s.yt)}/mqdefault.jpg" alt="${esc(s.title)} — ${esc(s.film)}" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('noimg')">`;
+    return s.embed === false
+      ? `<a class="thumb" href="https://www.youtube.com/watch?v=${esc(s.yt)}" target="_blank" rel="noopener" aria-label="Play ${esc(s.title)} on YouTube">${img}<span class="thumb-play">▶</span><span class="thumb-badge">YouTube ↗</span></a>`
+      : `<button class="thumb" data-thumbplay="${esc(s.id)}" aria-label="Play ${esc(s.title)}">${img}<span class="thumb-play">${Player.isCurrent(s.id) ? '🔊' : '▶'}</span></button>`;
   }
 
   const playAllBtns = () => `
@@ -706,11 +720,11 @@
         Player.play(queue[0], queue);
         return;
       }
-      const p = e.target.closest('[data-play]');
+      const p = e.target.closest('[data-play],[data-thumbplay]');
       if (p) {
         // Queue = the songs currently shown on screen, in order
         const queue = [...els.view.querySelectorAll('[data-play]')].map((b) => b.dataset.play);
-        Player.play(p.dataset.play, queue);
+        Player.play(p.dataset.play || p.dataset.thumbplay, queue);
       }
     });
     els.nextTrivia.addEventListener('click', () => showTrivia(state.triviaIndex + 1));
