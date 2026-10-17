@@ -5,7 +5,7 @@
    Bump CACHE_VERSION whenever you change any shell file.
    ========================================================= */
 
-const CACHE_VERSION = 'v2.0.0';
+const CACHE_VERSION = 'v2.0.1';
 const SHELL_CACHE = `kk-shell-${CACHE_VERSION}`;
 const DATA_CACHE = `kk-data-${CACHE_VERSION}`;
 
@@ -53,6 +53,7 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return; // let external links (YouTube) pass through
   if (url.pathname.includes('/tools/')) return;     // admin tools (video picker) are never cached
+  if (req.referrer && req.referrer.includes('/tools/')) return; // ...nor anything the tools load (always fresh songs.json)
 
   // Song matrix: stale-while-revalidate
   if (url.pathname.endsWith('/songs.json')) {
