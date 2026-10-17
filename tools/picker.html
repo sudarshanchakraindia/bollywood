@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Video Picker — Kishore Jukebox</title>
+<style>
+  :root { --bg:#1a0f0a; --card:#2e1b11; --card2:#3a2416; --line:#5a3a24; --text:#f7ead8; --muted:#c9ae8f; --gold:#f2b84b; --red:#d9483b; --green:#3fb86b; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font-family:"Segoe UI",Roboto,"Noto Sans Devanagari",sans-serif; line-height:1.45; }
+  header { position:sticky; top:0; z-index:5; background:#120905; border-bottom:2px solid var(--gold); padding:10px 16px; }
+  header h1 { margin:0; font-size:1.1rem; color:var(--gold); }
+  .bar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:6px; font-size:.9rem; }
+  .progress { flex:1; min-width:160px; height:10px; background:#000; border-radius:99px; overflow:hidden; border:1px solid var(--line); }
+  .progress i { display:block; height:100%; background:var(--green); width:0; transition:width .3s; }
+  button { font:inherit; cursor:pointer; border-radius:99px; border:1px solid var(--line); background:var(--card); color:var(--text); padding:6px 12px; }
+  button.primary { background:var(--gold); color:#2a1608; border-color:var(--gold); font-weight:700; }
+  main { max-width:1100px; margin:0 auto; padding:12px 16px 80px; }
+  .help { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px 14px; font-size:.92rem; }
+  .song { margin:18px 0; padding:12px; background:#24150d; border:1px solid var(--line); border-radius:14px; }
+  .song.done { border-color:var(--green); }
+  .song h2 { margin:0; font-size:1rem; }
+  .song h2 small { color:var(--muted); font-weight:400; }
+  .cands { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:10px; margin-top:10px; }
+  .cand { background:var(--card); border:2px solid var(--line); border-radius:10px; overflow:hidden; display:flex; flex-direction:column; }
+  .cand.sel { border-color:var(--green); box-shadow:0 0 0 2px rgba(63,184,107,.4); }
+  .cand.noembed { opacity:.45; }
+  .thumb { position:relative; aspect-ratio:16/9; background:#000; cursor:pointer; border:0; padding:0; border-radius:0; width:100%; }
+  .thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+  .thumb span { position:absolute; inset:auto 6px 6px auto; background:rgba(0,0,0,.75); color:#fff; font-size:.75rem; padding:1px 6px; border-radius:4px; }
+  .meta { padding:6px 8px; font-size:.78rem; flex:1; }
+  .meta b { display:block; font-size:.8rem; font-weight:600; max-height:3.6em; overflow:hidden; }
+  .meta .ch { color:var(--muted); }
+  .tag { display:inline-block; font-size:.68rem; padding:0 6px; border-radius:99px; background:var(--card2); margin:2px 2px 0 0; }
+  .tag.cur { background:#2a4a7a; } .tag.bad { background:#7a2a2a; }
+  .pick { margin:0 8px 8px; }
+  .cand.sel .pick { background:var(--green); color:#04150a; border-color:var(--green); font-weight:700; }
+  .modal { position:fixed; inset:0; background:rgba(0,0,0,.85); display:none; align-items:center; justify-content:center; z-index:10; padding:16px; }
+  .modal.open { display:flex; }
+  .modal-box { width:min(800px,100%); }
+  .modal iframe { width:100%; aspect-ratio:16/9; border:0; background:#000; }
+  .modal .row { display:flex; gap:8px; justify-content:flex-end; margin-top:8px; }
+  textarea { width:100%; min-height:120px; background:#000; color:#9f9; border:1px solid var(--line); border-radius:8px; font-family:monospace; font-size:.75rem; }
+  .empty { text-align:center; color:var(--muted); padding:40px 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🎬 Video Picker — असली फ़िल्म वाला video चुनें</h1>
+  <div class="bar">
+    <span id="count">0 / 0</span>
+    <div class="progress"><i id="prog"></i></div>
+    <label><input type="checkbox" id="onlyLeft"> सिर्फ़ बाकी गाने</label>
+    <button class="primary" id="doneBtn">✅ Done</button>
+  </div>
+</header>
+<main>
+  <div class="help">
+    हर गाने के नीचे कुछ videos हैं। <b>तस्वीर पर click</b> करके video देख सकते हैं।
+    जो <b>असली फ़िल्म वाला</b> हो, उसके नीचे <b>"✔ यही सही है"</b> दबाएँ।
+    आपकी पसंद अपने-आप इसी browser में save होती जाती है — बीच में बंद करके बाद में भी आ सकते हैं।
+    <br><span class="tag cur">अभी app में</span> = जो video अभी चल रहा है · <span class="tag bad">embed बंद</span> = app में नहीं चलेगा
+  </div>
+  <div id="list"><p class="empty">Loading…</p></div>
+  <div id="result" hidden>
+    <h2>✅ आपकी पसंद तैयार है</h2>
+    <p>Claude को बस बता दें "picker done" — वह यहाँ से अपने-आप पढ़ लेगा। (या नीचे वाला text copy कर दें।)</p>
+    <textarea id="out" readonly></textarea>
+  </div>
+</main>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <iframe id="frame" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <div class="row">
+      <button class="primary" id="mPick">✔ यही सही है</button>
+      <button id="mClose">✕ बंद करें</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(() => {
+  'use strict';
+  const LS = {
+    get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { alert('Browser storage full / blocked'); } }
+  };
+  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+  const fmtViews = (n) => n >= 1e7 ? (n / 1e7).toFixed(1) + ' करोड़' : n >= 1e5 ? (n / 1e5).toFixed(1) + ' लाख' : n >= 1e3 ? Math.round(n / 1e3) + 'K' : String(n || 0);
+
+  // Candidates arrive once via the URL hash (#cand=...), then live in localStorage.
+  if (location.hash.startsWith('#cand=')) {
+    try {
+      const incoming = JSON.parse(decodeURIComponent(location.hash.slice(6)));
+      LS.set('kk.cand', { ...LS.get('kk.cand', {}), ...incoming });
+    } catch (e) { console.error('Bad candidate data', e); }
+    history.replaceState(null, '', location.pathname);
+  }
+
+  const cand = LS.get('kk.cand', {});
+  const picks = LS.get('kk.picks', {});
+  let songs = [];
+  let modalFor = null;
+
+  const $ = (id) => document.getElementById(id);
+
+  function render() {
+    const onlyLeft = $('onlyLeft').checked;
+    const withCands = songs.filter((s) => cand[s.id] && cand[s.id].length);
+    const done = withCands.filter((s) => picks[s.id]).length;
+    $('count').textContent = `${done} / ${withCands.length} चुने गए`;
+    $('prog').style.width = withCands.length ? (done / withCands.length * 100) + '%' : 0;
+    if (!withCands.length) {
+      $('list').innerHTML = '<p class="empty">अभी कोई video list नहीं है। Claude से कहें कि candidates भेजे।</p>';
+      return;
+    }
+    $('list').innerHTML = withCands
+      .filter((s) => !onlyLeft || !picks[s.id])
+      .map((s) => `
+        <section class="song ${picks[s.id] ? 'done' : ''}" id="sec-${esc(s.id)}">
+          <h2>${esc(s.title)} <small>· ${esc(s.hi)} · ${esc(s.film)} (${esc(s.year)})</small></h2>
+          <div class="cands">
+            ${cand[s.id].map((v) => `
+              <div class="cand ${picks[s.id] === v.id ? 'sel' : ''} ${v.e === 0 ? 'noembed' : ''}">
+                <button class="thumb" data-preview="${esc(s.id)}|${esc(v.id)}" aria-label="Preview">
+                  <img loading="lazy" src="https://i.ytimg.com/vi/${esc(v.id)}/mqdefault.jpg" alt="">
+                  <span>${esc(v.len)}</span>
+                </button>
+                <div class="meta">
+                  <b>${esc(v.t)}</b>
+                  <span class="ch">${esc(v.c)} · ${fmtViews(v.v)} views</span><br>
+                  ${s.yt === v.id ? '<span class="tag cur">अभी app में</span>' : ''}
+                  ${v.e === 0 ? '<span class="tag bad">embed बंद</span>' : ''}
+                </div>
+                <button class="pick" data-pick="${esc(s.id)}|${esc(v.id)}">${picks[s.id] === v.id ? '✔ चुना गया' : '✔ यही सही है'}</button>
+              </div>`).join('')}
+          </div>
+        </section>`).join('') || '<p class="empty">🎉 सारे गाने चुन लिए गए!</p>';
+  }
+
+  function choose(sid, vid) {
+    picks[sid] = vid;
+    LS.set('kk.picks', picks);
+    render();
+    // jump to next unpicked song
+    const next = songs.find((s) => cand[s.id] && !picks[s.id]);
+    if (next && !$('onlyLeft').checked) document.getElementById('sec-' + next.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  document.addEventListener('click', (e) => {
+    const p = e.target.closest('[data-pick]');
+    if (p) { const [sid, vid] = p.dataset.pick.split('|'); choose(sid, vid); return; }
+    const pv = e.target.closest('[data-preview]');
+    if (pv) {
+      const [sid, vid] = pv.dataset.preview.split('|');
+      modalFor = [sid, vid];
+      $('frame').src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(vid)}?autoplay=1&rel=0`;
+      $('modal').classList.add('open');
+    }
+  });
+  const closeModal = () => { $('modal').classList.remove('open'); $('frame').src = 'about:blank'; };
+  $('mClose').addEventListener('click', closeModal);
+  $('modal').addEventListener('click', (e) => { if (e.target.id === 'modal') closeModal(); });
+  $('mPick').addEventListener('click', () => { if (modalFor) choose(modalFor[0], modalFor[1]); closeModal(); });
+  $('onlyLeft').addEventListener('change', render);
+  $('doneBtn').addEventListener('click', () => {
+    $('out').value = JSON.stringify(picks);
+    $('result').hidden = false;
+    $('result').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  fetch('../songs.json', { cache: 'no-cache' })
+    .then((r) => r.json())
+    .then((d) => {
+      songs = d.bundles.flatMap((b) => b.sections.flatMap((sec) => sec.songs));
+      render();
+    })
+    .catch(() => { $('list').innerHTML = '<p class="empty">songs.json load नहीं हुआ।</p>'; });
+})();
+</script>
+</body>
+</html>
