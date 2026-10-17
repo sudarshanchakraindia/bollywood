@@ -248,7 +248,9 @@
             <span>${s.pop}</span>
           </div>` : ''}
         <div class="song-actions">
-          ${s.yt
+          ${s.yt && s.embed === false
+            ? `<a class="play-btn" href="https://www.youtube.com/watch?v=${esc(s.yt)}" target="_blank" rel="noopener" title="This video only plays on YouTube">▶ Play on YouTube ↗</a>`
+            : s.yt
             ? `<button class="play-btn" data-play="${esc(s.id)}" aria-label="Play ${esc(s.title)}">${Player.isCurrent(s.id) ? '🔊 Playing' : '▶ Play'}</button>`
             : `<a class="play-btn" href="${ytLink(s)}" target="_blank" rel="noopener">▶ Listen</a>`}
           <button class="fav-btn" data-fav="${esc(s.id)}" aria-pressed="${fav}" aria-label="${fav ? 'Remove from' : 'Add to'} favourites">${fav ? '♥' : '♡'}</button>
