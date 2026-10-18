@@ -357,6 +357,15 @@
 
   const secSongs = (sec) => sec.ids.map((id) => state.songs.find((x) => x.id === id)).filter(Boolean);
 
+  /** Picture for a category chip: a frame from that star's most popular song (the star is the lead on screen). */
+  function chipPic(kind, g) {
+    const withVid = g.songs.filter((s) => s.yt);
+    const lead = kind === 'actors' ? withVid.filter((s) => (s.actors || [])[0] === g.key) : withVid;
+    const pool = lead.length ? lead : withVid;
+    const best = pool.slice().sort((a, b) => (b.pop || 0) - (a.pop || 0))[0];
+    return best ? best.yt : '';
+  }
+
   function renderCategory(kind) {
     const groups = groupsFor(kind);
     if (!groups.length) return '<p class="empty">अभी कोई गाना नहीं।</p>';
@@ -365,8 +374,9 @@
     const g = groups.find((x) => x.key === key);
     return `
       <div class="cat-chips" role="tablist" aria-label="${esc(CATS[kind].en)}">
-        ${groups.map((x) => `<button class="cat-chip" data-cat="${esc(kind)}|${esc(x.key)}" aria-selected="${x.key === key}">
-          ${esc(groupLabel(kind, x.key))} <small lang="hi">${esc(groupLabelHi(kind, x.key))}</small><b>${x.songs.length}</b></button>`).join('')}
+        ${groups.map((x) => { const pic = chipPic(kind, x); return `<button class="cat-chip${pic ? ' has-pic' : ''}" data-cat="${esc(kind)}|${esc(x.key)}" aria-selected="${x.key === key}">
+          ${pic ? `<img class="chip-pic" src="https://i.ytimg.com/vi/${esc(pic)}/mqdefault.jpg" alt="" loading="lazy" onerror="this.remove()">` : ''}
+          <span class="chip-txt">${esc(groupLabel(kind, x.key))} <small lang="hi">${esc(groupLabelHi(kind, x.key))}</small></span><b>${x.songs.length}</b></button>`; }).join('')}
       </div>
       <div class="bundle-head">
         ${playAllBtns()}

@@ -316,6 +316,15 @@ body.has-player { padding-bottom: 360px; }
 .cat-chip[aria-selected="true"] { background: var(--gold); color: #2a1608; border-color: var(--gold); }
 .cat-chip[aria-selected="true"] small { color: #5a3a1a; }
 
+/* Chip pictures (actor / pair / composer) */
+.cat-chip.has-pic { display: flex; align-items: center; gap: 8px; padding: 6px 12px 6px 6px; }
+.chip-pic {
+  width: 46px; height: 46px; border-radius: 50%; object-fit: cover; flex: 0 0 46px;
+  border: 2px solid var(--gold); background: #000;
+}
+.cat-chip[aria-selected="true"] .chip-pic { border-color: #2a1608; }
+.chip-txt { display: block; }
+
 /* Mode toggle + Play-all */
 .mode-btn {
   margin-top: 4px; padding: 3px 10px; font-size: .75rem; font-weight: 700;
