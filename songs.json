@@ -1,5 +1,5 @@
 {
- "version": "2.5.0",
+ "version": "2.6.0",
  "names": {
   "Kishore Kumar": "किशोर कुमार",
   "Lata Mangeshkar": "लता मंगेशकर",
@@ -78,7 +78,20 @@
   "Ranjeeta Kaur": "रंजीता कौर",
   "Padmini Kolhapure": "पद्मिनी कोल्हापुरे",
   "Ravindra Jain": "रवींद्र जैन",
-  "Leena Chandavarkar": "लीना चंदावरकर"
+  "Leena Chandavarkar": "लीना चंदावरकर",
+  "O.P. Nayyar": "ओ.पी. नैय्यर",
+  "Uttam-Jagdish": "उत्तम-जगदीश",
+  "Usha Khanna": "उषा खन्ना",
+  "Joy Mukherjee": "जॉय मुखर्जी",
+  "Deb Mukherjee": "देब मुखर्जी",
+  "Raj Kiran": "राज किरण",
+  "Navin Nischol": "नवीन निश्चल",
+  "Archana": "अर्चना",
+  "Rakesh Roshan": "राकेश रोशन",
+  "Kunal Goswami": "कुणाल गोस्वामी",
+  "Anil Dhawan": "अनिल धवन",
+  "Vikram": "विक्रम",
+  "Zaheeda": "ज़हीदा"
  },
  "songs": [
   {
@@ -2157,6 +2170,390 @@
     "Leena Chandavarkar"
    ],
    "yt": "GmLstKdyx3Y"
+  },
+  {
+   "id": "sp01",
+   "title": "Tu Auron Ki Kyun Ho Gayi",
+   "hi": "तू औरों की क्यूँ हो गई",
+   "film": "Ek Baar Mooskura Do",
+   "year": 1972,
+   "composer": "O.P. Nayyar",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Joy Mukherjee",
+    "Deb Mukherjee"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "sp02",
+   "title": "Jaane Kaise Kab Kahan Iqraar Ho Gaya",
+   "hi": "जाने कैसे कब कहाँ इक़रार हो गया",
+   "film": "Shakti",
+   "year": 1982,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Lata Mangeshkar"
+   ],
+   "actors": [
+    "Amitabh Bachchan",
+    "Smita Patil"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "sp03",
+   "title": "Husn Ki Wadiyon Mein",
+   "hi": "हुस्न की वादियों में",
+   "film": "Waaris",
+   "year": 1988,
+   "composer": "Uttam-Jagdish",
+   "singers": [
+    "Kishore Kumar",
+    "Lata Mangeshkar"
+   ],
+   "actors": [
+    "Raj Kiran"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "sp04",
+   "title": "Raat Kali Ek Khwab Mein",
+   "hi": "रात कली एक ख़्वाब में",
+   "film": "Buddha Mil Gaya",
+   "year": 1971,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Navin Nischol"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "sp05",
+   "title": "Bhali Bhali Si Ek Surat",
+   "hi": "भली भली सी एक सूरत",
+   "film": "Buddha Mil Gaya",
+   "year": 1971,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Asha Bhosle"
+   ],
+   "actors": [
+    "Navin Nischol",
+    "Archana"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "sp06",
+   "title": "Tum Se Badhkar Duniya Mein",
+   "hi": "तुम से बढ़कर दुनिया में",
+   "film": "Kaamchor",
+   "year": 1982,
+   "composer": "Rajesh Roshan",
+   "singers": [
+    "Kishore Kumar",
+    "Alka Yagnik"
+   ],
+   "actors": [
+    "Rakesh Roshan",
+    "Jaya Prada"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "sp07",
+   "title": "Neele Neele Ambar Par",
+   "hi": "नीले नीले अम्बर पर",
+   "film": "Kalaakaar",
+   "year": 1983,
+   "composer": "Kalyanji-Anandji",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Kunal Goswami",
+    "Sridevi"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "sp08",
+   "title": "Ye Jeevan Hai",
+   "hi": "ये जीवन है",
+   "film": "Piya Ka Ghar",
+   "year": 1972,
+   "composer": "Laxmikant-Pyarelal",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Anil Dhawan",
+    "Jaya Bhaduri"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "sp09",
+   "title": "Dil Kya Kare",
+   "hi": "दिल क्या करे",
+   "film": "Julie",
+   "year": 1975,
+   "composer": "Rajesh Roshan",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Vikram"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "sp10",
+   "title": "Tera Mujhse Hai Pehle Ka Nata Koi",
+   "hi": "तेरा मुझसे है पहले का नाता कोई",
+   "film": "Aa Gale Lag Jaa",
+   "year": 1973,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Shashi Kapoor"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "sp11",
+   "title": "Vaada Karo Nahin Chhodoge",
+   "hi": "वादा करो नहीं छोड़ोगे",
+   "film": "Aa Gale Lag Jaa",
+   "year": 1973,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Lata Mangeshkar"
+   ],
+   "actors": [
+    "Shashi Kapoor",
+    "Sharmila Tagore"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "sp21",
+   "title": "Ek Ladki Bheegi Bhaagi Si",
+   "hi": "एक लड़की भीगी भागी सी",
+   "film": "Chalti Ka Naam Gaadi",
+   "year": 1958,
+   "composer": "S.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Kishore Kumar",
+    "Madhubala"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "sp22",
+   "title": "Panthi Hoon Main Us Path Ka",
+   "hi": "पंथी हूँ मैं उस पथ का",
+   "film": "Door Ka Raahi",
+   "year": 1971,
+   "composer": "Kishore Kumar",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Kishore Kumar"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "sp23",
+   "title": "Aa Chal Ke Tujhe",
+   "hi": "आ चल के तुझे",
+   "film": "Door Gagan Ki Chhaon Mein",
+   "year": 1964,
+   "composer": "Kishore Kumar",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Kishore Kumar"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "sp24",
+   "title": "Koi Lauta De Mere Beete Hue Din",
+   "hi": "कोई लौटा दे मेरे बीते हुए दिन",
+   "film": "Door Gagan Ki Chhaon Mein",
+   "year": 1964,
+   "composer": "Kishore Kumar",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Kishore Kumar"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "dv01",
+   "title": "Gaata Rahe Mera Dil",
+   "hi": "गाता रहे मेरा दिल",
+   "film": "Guide",
+   "year": 1965,
+   "composer": "S.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Lata Mangeshkar"
+   ],
+   "actors": [
+    "Dev Anand",
+    "Waheeda Rehman"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "dv02",
+   "title": "Khwab Ho Tum Ya Koi Haqeeqat",
+   "hi": "ख़्वाब हो तुम या कोई हक़ीक़त",
+   "film": "Teen Devian",
+   "year": 1965,
+   "composer": "S.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Dev Anand"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "dv03",
+   "title": "Phoolon Ke Rang Se",
+   "hi": "फूलों के रंग से",
+   "film": "Prem Pujari",
+   "year": 1970,
+   "composer": "S.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Dev Anand",
+    "Waheeda Rehman"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "dv04",
+   "title": "Shokhiyon Mein Ghola Jaye",
+   "hi": "शोख़ियों में घोला जाए",
+   "film": "Prem Pujari",
+   "year": 1970,
+   "composer": "S.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Lata Mangeshkar"
+   ],
+   "actors": [
+    "Dev Anand",
+    "Waheeda Rehman"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "dv05",
+   "title": "Dil Aaj Shayar Hai",
+   "hi": "दिल आज शायर है",
+   "film": "Gambler",
+   "year": 1971,
+   "composer": "S.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Dev Anand",
+    "Zaheeda"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "dv06",
+   "title": "Pal Bhar Ke Liye",
+   "hi": "पल भर के लिए",
+   "film": "Johny Mera Naam",
+   "year": 1970,
+   "composer": "Kalyanji-Anandji",
+   "singers": [
+    "Kishore Kumar",
+    "Usha Khanna"
+   ],
+   "actors": [
+    "Dev Anand",
+    "Hema Malini"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "dv07",
+   "title": "Phoolon Ka Taaron Ka",
+   "hi": "फूलों का तारों का",
+   "film": "Hare Rama Hare Krishna",
+   "year": 1971,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Dev Anand",
+    "Zeenat Aman"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "dv08",
+   "title": "Yeh Dil Na Hota Bechara",
+   "hi": "ये दिल न होता बेचारा",
+   "film": "Jewel Thief",
+   "year": 1967,
+   "composer": "S.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Dev Anand"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "dv09",
+   "title": "Kanchi Re Kanchi Re",
+   "hi": "कांची रे कांची रे",
+   "film": "Hare Rama Hare Krishna",
+   "year": 1971,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Lata Mangeshkar"
+   ],
+   "actors": [
+    "Dev Anand",
+    "Mumtaz"
+   ],
+   "status": "review"
   }
  ],
  "collections": [
@@ -2297,6 +2694,52 @@
      ]
     }
    ]
+  },
+  {
+   "id": "b4",
+   "title": "💎 Kishore Specials",
+   "hi": "अनमोल रत्न",
+   "subtitle": "Superhits on stars he sang for only once or twice — and Kishore as actor & composer.",
+   "sections": [
+    {
+     "id": "b4-a",
+     "class": "tier-1",
+     "title": "Other Stars · Superhits",
+     "hi": "दूसरे सितारों पर सुपरहिट",
+     "desc": "One or two songs for a star — and each one a gem.",
+     "ids": [
+      "sp01",
+      "sp02",
+      "sp03",
+      "sp04",
+      "sp05",
+      "sp06",
+      "sp07",
+      "sp08",
+      "sp09",
+      "sp10",
+      "sp11",
+      "s404"
+     ]
+    },
+    {
+     "id": "b4-b",
+     "class": "tier-3",
+     "title": "Kishore — Actor & Composer",
+     "hi": "किशोर — अभिनेता और संगीतकार",
+     "desc": "Kishore on screen, and Kishore composing his own tunes.",
+     "ids": [
+      "sp21",
+      "sp22",
+      "sp23",
+      "sp24",
+      "n301",
+      "s603",
+      "s701",
+      "s506"
+     ]
+    }
+   ]
   }
  ],
  "trivia": [
@@ -2359,8 +2802,8 @@
   "Mithun Chakraborty",
   "Shashi Kapoor",
   "Sanjeev Kumar",
-  "Rishi Kapoor",
   "Dev Anand",
+  "Rishi Kapoor",
   "Randhir Kapoor",
   "Sunil Dutt",
   "Kishore Kumar",

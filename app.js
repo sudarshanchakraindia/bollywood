@@ -193,12 +193,18 @@
     let list = [...map.entries()].map(([key, songs]) => ({ key, songs: songs.sort((a, b) => a.year - b.year) }));
     if (kind === 'pairs') list.sort((a, b) => PAIR_ORDER.indexOf(a.key) - PAIR_ORDER.indexOf(b.key));
     else if (kind === 'actors') list.sort((a, b) => heroes().indexOf(a.key) - heroes().indexOf(b.key));
-    else list = list.filter((g) => g.songs.length >= 2).sort((a, b) => b.songs.length - a.songs.length || a.key.localeCompare(b.key));
+    else {
+      // Composers with a single song are gathered into one "Other Music Directors" chip
+      const big = list.filter((g) => g.songs.length >= 2).sort((a, b) => b.songs.length - a.songs.length || a.key.localeCompare(b.key));
+      const rest = list.filter((g) => g.songs.length < 2).flatMap((g) => g.songs).sort((a, b) => a.year - b.year);
+      list = rest.length ? [...big, { key: OTHER, songs: rest }] : big;
+    }
     return list;
   }
   const heroes = () => (state.data && state.data.heroes) || [];
-  const groupLabel = (kind, key) => kind === 'pairs' ? `Kishore & ${key}` : kind === 'actors' ? `Kishore × ${key}` : key;
-  const groupLabelHi = (kind, key) => kind === 'pairs' ? `किशोर और ${hiName(key)}` : kind === 'actors' ? `किशोर × ${hiName(key)}` : hiName(key);
+  const OTHER = '__other__';
+  const groupLabel = (kind, key) => key === OTHER ? 'Other Music Directors' : kind === 'pairs' ? `Kishore & ${key}` : kind === 'actors' ? `Kishore × ${key}` : key;
+  const groupLabelHi = (kind, key) => key === OTHER ? 'अन्य संगीतकार' : kind === 'pairs' ? `किशोर और ${hiName(key)}` : kind === 'actors' ? `किशोर × ${hiName(key)}` : hiName(key);
 
   /** Score a song for a query. 0 = no match. */
   function scoreSong(song, q) {
