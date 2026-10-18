@@ -1,5 +1,5 @@
 {
- "version": "2.1.0",
+ "version": "2.2.0",
  "names": {
   "Kishore Kumar": "किशोर कुमार",
   "Lata Mangeshkar": "लता मंगेशकर",
@@ -55,7 +55,28 @@
   "Parveen Babi": "परवीन बाबी",
   "Kalpana Kartik": "कल्पना कार्तिक",
   "Rakhee": "राखी",
-  "Dimple Kapadia": "डिंपल कपाड़िया"
+  "Dimple Kapadia": "डिंपल कपाड़िया",
+  "Kalyanji-Anandji": "कल्याणजी-आनंदजी",
+  "Rajesh Roshan": "राजेश रोशन",
+  "Hridaynath Mangeshkar": "हृदयनाथ मंगेशकर",
+  "Salil Chowdhury": "सलिल चौधरी",
+  "Raam Laxman": "राम लक्ष्मण",
+  "Annette Pinto": "एनेट पिंटो",
+  "Pt. Satyanarayan Mishra": "पं. सत्यनारायण मिश्र",
+  "Sushma Shrestha": "सुषमा श्रेष्ठ",
+  "Kavita Krishnamurthy": "कविता कृष्णमूर्ति",
+  "Alisha Chinai": "अलीशा चिनॉय",
+  "Alka Yagnik": "अलका याग्निक",
+  "Anil Kapoor": "अनिल कपूर",
+  "Mithun Chakraborty": "मिथुन चक्रवर्ती",
+  "Amjad Khan": "अमजद ख़ान",
+  "Helen": "हेलन",
+  "Jaya Prada": "जया प्रदा",
+  "Sridevi": "श्रीदेवी",
+  "Poonam Dhillon": "पूनम ढिल्लों",
+  "Rati Agnihotri": "रति अग्निहोत्री",
+  "Ranjeeta Kaur": "रंजीता कौर",
+  "Padmini Kolhapure": "पद्मिनी कोल्हापुरे"
  },
  "songs": [
   {
@@ -1260,6 +1281,700 @@
     "Dharmendra"
    ],
    "yt": "wzQAUY7DjEw"
+  },
+  {
+   "id": "a01",
+   "title": "Khaike Paan Banaraswala",
+   "hi": "खइके पान बनारसवाला",
+   "film": "Don",
+   "year": 1978,
+   "composer": "Kalyanji-Anandji",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Amitabh Bachchan",
+    "Zeenat Aman"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "a02",
+   "title": "Main Hoon Don",
+   "hi": "मैं हूँ डॉन",
+   "film": "Don",
+   "year": 1978,
+   "composer": "Kalyanji-Anandji",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Amitabh Bachchan",
+    "Helen"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "a03",
+   "title": "Rote Hue Aate Hain Sab",
+   "hi": "रोते हुए आते हैं सब",
+   "film": "Muqaddar Ka Sikandar",
+   "year": 1978,
+   "composer": "Kalyanji-Anandji",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Amitabh Bachchan"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "a04",
+   "title": "O Saathi Re",
+   "hi": "ओ साथी रे",
+   "film": "Muqaddar Ka Sikandar",
+   "year": 1978,
+   "composer": "Kalyanji-Anandji",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Amitabh Bachchan",
+    "Rekha"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "a05",
+   "title": "Manzilein Apni Jagah Hain",
+   "hi": "मंज़िलें अपनी जगह हैं",
+   "film": "Sharaabi",
+   "year": 1984,
+   "composer": "Bappi Lahiri",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Amitabh Bachchan"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "a06",
+   "title": "De De Pyar De",
+   "hi": "दे दे प्यार दे",
+   "film": "Sharaabi",
+   "year": 1984,
+   "composer": "Bappi Lahiri",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Amitabh Bachchan",
+    "Jaya Prada"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "a07",
+   "title": "Inteha Ho Gayi Intezar Ki",
+   "hi": "इंतेहा हो गई इंतज़ार की",
+   "film": "Sharaabi",
+   "year": 1984,
+   "composer": "Bappi Lahiri",
+   "singers": [
+    "Kishore Kumar",
+    "Asha Bhosle"
+   ],
+   "actors": [
+    "Amitabh Bachchan",
+    "Jaya Prada"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "a08",
+   "title": "Chhookar Mere Man Ko",
+   "hi": "छूकर मेरे मन को",
+   "film": "Yaarana",
+   "year": 1981,
+   "composer": "Rajesh Roshan",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Amitabh Bachchan",
+    "Neetu Singh"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "a09",
+   "title": "Tere Jaisa Yaar Kahan",
+   "hi": "तेरे जैसा यार कहाँ",
+   "film": "Yaarana",
+   "year": 1981,
+   "composer": "Rajesh Roshan",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Amitabh Bachchan",
+    "Amjad Khan"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "a10",
+   "title": "Pardesiya Yeh Sach Hai Piya",
+   "hi": "परदेसिया ये सच है पिया",
+   "film": "Mr. Natwarlal",
+   "year": 1979,
+   "composer": "Rajesh Roshan",
+   "singers": [
+    "Kishore Kumar",
+    "Lata Mangeshkar"
+   ],
+   "actors": [
+    "Amitabh Bachchan",
+    "Rekha"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "a11",
+   "title": "Dilbar Mere",
+   "hi": "दिलबर मेरे",
+   "film": "Satte Pe Satta",
+   "year": 1982,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Annette Pinto"
+   ],
+   "actors": [
+    "Amitabh Bachchan",
+    "Hema Malini"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "a12",
+   "title": "Pag Ghunghroo Baandh",
+   "hi": "पग घुँघरू बाँध",
+   "film": "Namak Halaal",
+   "year": 1982,
+   "composer": "Bappi Lahiri",
+   "singers": [
+    "Kishore Kumar",
+    "Pt. Satyanarayan Mishra"
+   ],
+   "actors": [
+    "Amitabh Bachchan"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "j01",
+   "title": "O Majhi Re",
+   "hi": "ओ माझी रे",
+   "film": "Khushboo",
+   "year": 1975,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Jeetendra",
+    "Hema Malini"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "j02",
+   "title": "Hum To Hain Rahi Dil Ke",
+   "hi": "हम तो हैं राही दिल के",
+   "film": "Caravan",
+   "year": 1971,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Jeetendra",
+    "Asha Parekh"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "j03",
+   "title": "Nainon Mein Sapna",
+   "hi": "नैनों में सपना",
+   "film": "Himmatwala",
+   "year": 1983,
+   "composer": "Bappi Lahiri",
+   "singers": [
+    "Kishore Kumar",
+    "Lata Mangeshkar"
+   ],
+   "actors": [
+    "Jeetendra",
+    "Sridevi"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "j04",
+   "title": "Taki O Taki",
+   "hi": "ताकी ओ ताकी",
+   "film": "Himmatwala",
+   "year": 1983,
+   "composer": "Bappi Lahiri",
+   "singers": [
+    "Kishore Kumar",
+    "Asha Bhosle"
+   ],
+   "actors": [
+    "Jeetendra",
+    "Sridevi"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "j05",
+   "title": "Pyar Ka Tohfa Tera",
+   "hi": "प्यार का तोहफ़ा तेरा",
+   "film": "Tohfa",
+   "year": 1984,
+   "composer": "Bappi Lahiri",
+   "singers": [
+    "Kishore Kumar",
+    "Asha Bhosle"
+   ],
+   "actors": [
+    "Jeetendra"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "j06",
+   "title": "Gori Tere Ang Ang Mein",
+   "hi": "गोरी तेरे अंग अंग में",
+   "film": "Tohfa",
+   "year": 1984,
+   "composer": "Bappi Lahiri",
+   "singers": [
+    "Kishore Kumar",
+    "Asha Bhosle"
+   ],
+   "actors": [
+    "Jeetendra"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "j07",
+   "title": "Albela Mausam",
+   "hi": "अलबेला मौसम",
+   "film": "Tohfa",
+   "year": 1984,
+   "composer": "Bappi Lahiri",
+   "singers": [
+    "Kishore Kumar",
+    "Lata Mangeshkar"
+   ],
+   "actors": [
+    "Jeetendra"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "d01",
+   "title": "Pal Pal Dil Ke Paas",
+   "hi": "पल पल दिल के पास",
+   "film": "Blackmail",
+   "year": 1973,
+   "composer": "Kalyanji-Anandji",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Dharmendra",
+    "Rakhee"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "d02",
+   "title": "Koi Haseena Jab Rooth Jaati Hai",
+   "hi": "कोई हसीना जब रूठ जाती है",
+   "film": "Sholay",
+   "year": 1975,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Hema Malini"
+   ],
+   "actors": [
+    "Dharmendra",
+    "Hema Malini"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "d03",
+   "title": "Dream Girl",
+   "hi": "ड्रीम गर्ल",
+   "film": "Dream Girl",
+   "year": 1977,
+   "composer": "Laxmikant-Pyarelal",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Dharmendra",
+    "Hema Malini"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "d04",
+   "title": "Kal Ki Haseen Mulaqat Ke Liye",
+   "hi": "कल की हसीन मुलाक़ात के लिए",
+   "film": "Charas",
+   "year": 1976,
+   "composer": "Laxmikant-Pyarelal",
+   "singers": [
+    "Kishore Kumar",
+    "Lata Mangeshkar"
+   ],
+   "actors": [
+    "Dharmendra",
+    "Hema Malini"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "d05",
+   "title": "Gir Gaya Jhumka",
+   "hi": "गिर गया झुमका",
+   "film": "Jugnu",
+   "year": 1973,
+   "composer": "S.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Lata Mangeshkar"
+   ],
+   "actors": [
+    "Dharmendra",
+    "Hema Malini"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "d06",
+   "title": "Deep Diwali Ke Jhoothe",
+   "hi": "दीप दिवाली के झूठे",
+   "film": "Jugnu",
+   "year": 1973,
+   "composer": "S.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Sushma Shrestha"
+   ],
+   "actors": [
+    "Dharmendra"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "d07",
+   "title": "Tera Peechha Na Chhodunga",
+   "hi": "तेरा पीछा न छोड़ूँगा",
+   "film": "Jugnu",
+   "year": 1973,
+   "composer": "S.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Dharmendra",
+    "Hema Malini"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "k01",
+   "title": "Zindagi Ki Yahi Reet Hai",
+   "hi": "ज़िंदगी की यही रीत है",
+   "film": "Mr. India",
+   "year": 1987,
+   "composer": "Laxmikant-Pyarelal",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Anil Kapoor"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "k02",
+   "title": "Karte Hain Hum Pyar Mr. India Se",
+   "hi": "करते हैं हम प्यार मिस्टर इंडिया से",
+   "film": "Mr. India",
+   "year": 1987,
+   "composer": "Laxmikant-Pyarelal",
+   "singers": [
+    "Kishore Kumar",
+    "Kavita Krishnamurthy"
+   ],
+   "actors": [
+    "Anil Kapoor",
+    "Sridevi"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "k03",
+   "title": "Kate Nahin Kat Te",
+   "hi": "काटे नहीं कटते",
+   "film": "Mr. India",
+   "year": 1987,
+   "composer": "Laxmikant-Pyarelal",
+   "singers": [
+    "Kishore Kumar",
+    "Alisha Chinai"
+   ],
+   "actors": [
+    "Anil Kapoor",
+    "Sridevi"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "k04",
+   "title": "Na Jaiyo Pardes",
+   "hi": "ना जइयो परदेस",
+   "film": "Karma",
+   "year": 1986,
+   "composer": "Laxmikant-Pyarelal",
+   "singers": [
+    "Kishore Kumar",
+    "Kavita Krishnamurthy"
+   ],
+   "actors": [
+    "Anil Kapoor",
+    "Poonam Dhillon"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "k05",
+   "title": "Zindagi Aa Raha Hoon Main",
+   "hi": "ज़िंदगी आ रहा हूँ मैं",
+   "film": "Mashaal",
+   "year": 1984,
+   "composer": "Hridaynath Mangeshkar",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Anil Kapoor"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "k06",
+   "title": "Mujhe Tum Yaad Karna",
+   "hi": "मुझे तुम याद करना",
+   "film": "Mashaal",
+   "year": 1984,
+   "composer": "Hridaynath Mangeshkar",
+   "singers": [
+    "Kishore Kumar",
+    "Lata Mangeshkar"
+   ],
+   "actors": [
+    "Anil Kapoor",
+    "Rati Agnihotri"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "v01",
+   "title": "Ruk Jana Nahin",
+   "hi": "रुक जाना नहीं",
+   "film": "Imtihaan",
+   "year": 1974,
+   "composer": "Laxmikant-Pyarelal",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Vinod Khanna"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "v02",
+   "title": "Koi Hota Jisko Apna",
+   "hi": "कोई होता जिसको अपना",
+   "film": "Mere Apne",
+   "year": 1971,
+   "composer": "Salil Chowdhury",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Vinod Khanna"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "v03",
+   "title": "Haal Chaal Theek Thaak Hai",
+   "hi": "हाल चाल ठीक ठाक है",
+   "film": "Mere Apne",
+   "year": 1971,
+   "composer": "Salil Chowdhury",
+   "singers": [
+    "Kishore Kumar",
+    "Mukesh"
+   ],
+   "actors": [
+    "Vinod Khanna"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "v04",
+   "title": "Chahiye Thoda Pyar",
+   "hi": "चाहिए थोड़ा प्यार",
+   "film": "Lahu Ke Do Rang",
+   "year": 1979,
+   "composer": "Bappi Lahiri",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Vinod Khanna"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "m01",
+   "title": "Jab Bhi Koi Kangana Bole",
+   "hi": "जब भी कोई कंगना बोले",
+   "film": "Shaukeen",
+   "year": 1982,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Mithun Chakraborty",
+    "Rati Agnihotri"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "m02",
+   "title": "Chand Chal Tu Zara Dheeme Dheeme",
+   "hi": "चाँद चल तू ज़रा धीमे धीमे",
+   "film": "Woh Jo Hasina",
+   "year": 1983,
+   "composer": "Raam Laxman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Mithun Chakraborty",
+    "Ranjeeta Kaur"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "m03",
+   "title": "Aaja Saathiya",
+   "hi": "आजा साथिया",
+   "film": "Ek Aur Sikander",
+   "year": 1986,
+   "composer": "Rajesh Roshan",
+   "singers": [
+    "Kishore Kumar",
+    "Lata Mangeshkar"
+   ],
+   "actors": [
+    "Mithun Chakraborty",
+    "Rati Agnihotri"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "m04",
+   "title": "Dhadka Dil Dil Dil",
+   "hi": "धड़का दिल दिल दिल",
+   "film": "Ek Aur Sikander",
+   "year": 1986,
+   "composer": "Rajesh Roshan",
+   "singers": [
+    "Kishore Kumar",
+    "Alka Yagnik"
+   ],
+   "actors": [
+    "Mithun Chakraborty"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "m05",
+   "title": "Baahon Mein",
+   "hi": "बाहों में",
+   "film": "Pyari Behna",
+   "year": 1985,
+   "composer": "Bappi Lahiri",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Mithun Chakraborty",
+    "Padmini Kolhapure"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "m06",
+   "title": "Jal Gaye Jal Gaye",
+   "hi": "जल गए जल गए",
+   "film": "Pyari Behna",
+   "year": 1985,
+   "composer": "Bappi Lahiri",
+   "singers": [
+    "Kishore Kumar",
+    "Asha Bhosle"
+   ],
+   "actors": [
+    "Mithun Chakraborty",
+    "Padmini Kolhapure"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "m07",
+   "title": "Sheeshe Ki Umar Pyale Ki",
+   "hi": "शीशे की उमर प्याले की",
+   "film": "Prem Pratigyaa",
+   "year": 1989,
+   "composer": "Bappi Lahiri",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Mithun Chakraborty"
+   ],
+   "status": "review"
   }
  ],
  "collections": [
@@ -1451,5 +2166,29 @@
    "en": "Kishore Kumar passed away on 13 October 1987 in Bombay; he was cremated in Khandwa as he wished.",
    "hi": "किशोर कुमार का निधन 13 अक्टूबर 1987 को बंबई में हुआ; उनकी इच्छा के अनुसार खंडवा में अंतिम संस्कार हुआ।"
   }
+ ],
+ "heroes": [
+  "Amitabh Bachchan",
+  "Rajesh Khanna",
+  "Jeetendra",
+  "Dharmendra",
+  "Anil Kapoor",
+  "Vinod Khanna",
+  "Mithun Chakraborty",
+  "Rishi Kapoor",
+  "Dev Anand",
+  "Sanjeev Kumar",
+  "Shashi Kapoor",
+  "Randhir Kapoor",
+  "Sunil Dutt",
+  "Kishore Kumar",
+  "Amol Palekar",
+  "Vinod Mehra",
+  "Sanjay Dutt",
+  "Shatrughan Sinha",
+  "Mehmood",
+  "Ashok Kumar",
+  "Anoop Kumar",
+  "Vijay Arora"
  ]
 }

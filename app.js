@@ -187,15 +187,18 @@
     state.songs.forEach((s) => {
       if (kind === 'pairs' && s.singers.includes(LEAD)) s.singers.filter((x) => x !== LEAD && PAIR_ORDER.includes(x)).forEach((x) => add(x, s));
       if (kind === 'composers') add(s.composer, s);
-      if (kind === 'actors') (s.actors || []).forEach((a) => add(a, s));
+      // Actors tab = heroes Kishore sang for (list kept in songs.json "heroes", in display order)
+      if (kind === 'actors') (s.actors || []).filter((a) => heroes().includes(a)).forEach((a) => add(a, s));
     });
     let list = [...map.entries()].map(([key, songs]) => ({ key, songs: songs.sort((a, b) => a.year - b.year) }));
     if (kind === 'pairs') list.sort((a, b) => PAIR_ORDER.indexOf(a.key) - PAIR_ORDER.indexOf(b.key));
+    else if (kind === 'actors') list.sort((a, b) => heroes().indexOf(a.key) - heroes().indexOf(b.key));
     else list = list.filter((g) => g.songs.length >= 2).sort((a, b) => b.songs.length - a.songs.length || a.key.localeCompare(b.key));
     return list;
   }
-  const groupLabel = (kind, key) => kind === 'pairs' ? `Kishore & ${key}` : key;
-  const groupLabelHi = (kind, key) => kind === 'pairs' ? `किशोर और ${hiName(key)}` : hiName(key);
+  const heroes = () => (state.data && state.data.heroes) || [];
+  const groupLabel = (kind, key) => kind === 'pairs' ? `Kishore & ${key}` : kind === 'actors' ? `Kishore × ${key}` : key;
+  const groupLabelHi = (kind, key) => kind === 'pairs' ? `किशोर और ${hiName(key)}` : kind === 'actors' ? `किशोर × ${hiName(key)}` : hiName(key);
 
   /** Score a song for a query. 0 = no match. */
   function scoreSong(song, q) {
