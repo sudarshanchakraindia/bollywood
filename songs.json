@@ -1,5 +1,5 @@
 {
- "version": "2.3.0",
+ "version": "2.4.0",
  "names": {
   "Kishore Kumar": "किशोर कुमार",
   "Lata Mangeshkar": "लता मंगेशकर",
@@ -76,7 +76,9 @@
   "Poonam Dhillon": "पूनम ढिल्लों",
   "Rati Agnihotri": "रति अग्निहोत्री",
   "Ranjeeta Kaur": "रंजीता कौर",
-  "Padmini Kolhapure": "पद्मिनी कोल्हापुरे"
+  "Padmini Kolhapure": "पद्मिनी कोल्हापुरे",
+  "Ravindra Jain": "रवींद्र जैन",
+  "Leena Chandavarkar": "लीना चंदावरकर"
  },
  "songs": [
   {
@@ -486,7 +488,7 @@
     "Kishore Kumar"
    ],
    "actors": [
-    "Jeetendra",
+    "Sanjeev Kumar",
     "Jaya Bhaduri"
    ]
   },
@@ -1977,6 +1979,182 @@
     "Mithun Chakraborty"
    ],
    "yt": "MUihDklGayA"
+  },
+  {
+   "id": "x01",
+   "title": "Hum Bewafa Hargiz Na The",
+   "hi": "हम बेवफ़ा हरगिज़ न थे",
+   "film": "Shalimar",
+   "year": 1978,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Dharmendra",
+    "Zeenat Aman"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "x11",
+   "title": "Khilte Hain Gul Yahan",
+   "hi": "खिलते हैं गुल यहाँ",
+   "film": "Sharmeelee",
+   "year": 1971,
+   "composer": "S.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Shashi Kapoor",
+    "Rakhee"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "x12",
+   "title": "O Meri Sharmilee",
+   "hi": "ओ मेरी शर्मीली",
+   "film": "Sharmeelee",
+   "year": 1971,
+   "composer": "S.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Shashi Kapoor",
+    "Rakhee"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "x13",
+   "title": "Kaise Kahen Hum",
+   "hi": "कैसे कहें हम",
+   "film": "Sharmeelee",
+   "year": 1971,
+   "composer": "S.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Shashi Kapoor",
+    "Rakhee"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "x14",
+   "title": "Aaj Madhosh Hua Jaye Re",
+   "hi": "आज मदहोश हुआ जाए रे",
+   "film": "Sharmeelee",
+   "year": 1971,
+   "composer": "S.D. Burman",
+   "singers": [
+    "Kishore Kumar",
+    "Lata Mangeshkar"
+   ],
+   "actors": [
+    "Shashi Kapoor",
+    "Rakhee"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "x15",
+   "title": "Ghunghroo Ki Tarah",
+   "hi": "घुँघरू की तरह",
+   "film": "Chor Machaye Shor",
+   "year": 1974,
+   "composer": "Ravindra Jain",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Shashi Kapoor"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "x16",
+   "title": "Le Jayenge Le Jayenge",
+   "hi": "ले जाएँगे ले जाएँगे",
+   "film": "Chor Machaye Shor",
+   "year": 1974,
+   "composer": "Ravindra Jain",
+   "singers": [
+    "Kishore Kumar",
+    "Asha Bhosle"
+   ],
+   "actors": [
+    "Shashi Kapoor",
+    "Mumtaz"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "x21",
+   "title": "Raah Pe Rehte Hain",
+   "hi": "राह पे रहते हैं",
+   "film": "Namkeen",
+   "year": 1982,
+   "composer": "R.D. Burman",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Sanjeev Kumar"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "x22",
+   "title": "O Manchali Kahan Chali",
+   "hi": "ओ मनचली कहाँ चली",
+   "film": "Manchali",
+   "year": 1973,
+   "composer": "Laxmikant-Pyarelal",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Sanjeev Kumar",
+    "Leena Chandavarkar"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "x23",
+   "title": "Gham Ka Fasana",
+   "hi": "ग़म का फ़साना",
+   "film": "Manchali",
+   "year": 1973,
+   "composer": "Laxmikant-Pyarelal",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Sanjeev Kumar",
+    "Leena Chandavarkar"
+   ],
+   "status": "review"
+  },
+  {
+   "id": "x24",
+   "title": "Mile Kahin Do Ajnabee",
+   "hi": "मिले कहीं दो अजनबी",
+   "film": "Manchali",
+   "year": 1973,
+   "composer": "Laxmikant-Pyarelal",
+   "singers": [
+    "Kishore Kumar"
+   ],
+   "actors": [
+    "Sanjeev Kumar",
+    "Leena Chandavarkar"
+   ],
+   "status": "review"
   }
  ],
  "collections": [
@@ -2177,10 +2355,10 @@
   "Anil Kapoor",
   "Vinod Khanna",
   "Mithun Chakraborty",
+  "Shashi Kapoor",
+  "Sanjeev Kumar",
   "Rishi Kapoor",
   "Dev Anand",
-  "Sanjeev Kumar",
-  "Shashi Kapoor",
   "Randhir Kapoor",
   "Sunil Dutt",
   "Kishore Kumar",
